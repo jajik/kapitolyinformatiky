@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Kódování a šifrování | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/chapters/coding-and-crypto.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Kódování a šifrování</h1>
+
+            <p>
+                Kódování a šifrování jsou dva termíny, které se často vyskytují vedle sebe a někdy jsou (mylně)
+                používány jako synonyma. Jak kódování, tak šifrování provádějí transformaci nějaké textu/dat
+                z jedné podoby do druhé, ale motivace za touto transformací se radikálně odlišují.
+            </p>
+
+            <p>
+                Kódováním měníme reprezentaci dat tak, aby se nám s výsledným kódem (zakódovaným textem)
+                lépe pracovalo – například abychom jej mohli lépe distribuovat/posílat nebo aby byl odolnější,
+                třeba vůči chybám přenosu či záznamu.
+            </p>
+
+            <p>
+                Šifrování také data nějak transformuje, ale ne pro usnadnění následné manipulace, ale
+                s cílem skrýt jejich obsah před nepovolanýma očima.
+            </p>
+
+            <h2>Kódování</h2>
+
+            <p>
+                Klíčovým termínem kódování je <span class="term">kód</span>. Kód je předpis, jak jednu skupinu symbolů
+                přeměnit na jinou. Zakódovanému symbolu říkáme <span class="term">kódové slovo</span>.
+            </p>
+
+            <p>
+                Známým příkladem takového kódu je třeba Morseova abeceda, která nám dává
+                předpis, jak přepsat písmena a čísla do sekvencí teček a čárek a naopak. Morseova abeceda je
+                příkladem kódu, který používáme pro snazší komunikaci. Písmena a čísla v ní umíme vyjádřit
+                pomocí kratších a delších signálů, takže pro komunikaci můžeme použít i baterku. Bez Morseovy
+                abecedy (resp. kódování) by se nám pomocí baterky zpráva přenášela těžko.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Dalším příkladem kódování je Braillovo písmo, které nám dává jasný předpis jak písmena z latinky
+                    přepsat do Braillovy abecedy a zpátky.
+                </p>
+            </div>
+
+            <p>
+                U kódů se občas můžeme setkat s pojmem <span class="term">arita</span>, která nám udává, kolika různými
+                symboly daný kód disponuje. Má-li kód aritu n, říkáme, že kód je n-ární. V případě morseovky
+                máme kód s aritou tři (symbol tečky, čárky a mezery), jde tedy o 3-ární (ternární) kód.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Pokud jsi už četl kapitolu o Číselných soustavách, možná ti to přijde trochu povědomé. I na číselné
+                    soustavy se můžeme dívat jako na kódy. Pojem arity potom odpovídá bázi.
+                </p>
+            </div>
+
+            <p>
+                Kódování využíváme i tehdy, když se chceme vyhnout chybám přenosu nebo alespoň snížit jejich vliv.
+                V takových případech mluvíme o <span class="term">kódech schopných detekovat chybu</span>, které, jak
+                již název napovídá, jsou schopny detekovat chybu (například v přenosu), nebo dokonce
+                o <span class="term">samoopravných kódech</span>, které jsou schopné chybu i do jisté míry napravit.
+            </p>
+
+            <p>
+                Než přejdeme k příkladu, na kterém si kódy schopné opravit chybu i samoopravné kódy ukážeme, bylo by
+                dobré projít si nějakou terminologii k přenosu (nejen) kódů.
+            </p>
+
+            <p>
+                Komunikace, přenost dat, probíhá mezi dvěma stranami: <span class="term">odesílatelem</span> (anglicky sender)
+                a <span class="term">příjemcem</span> (receiver). Tyto strany mezi sebou mají <span class="term">médium</span>,
+                tedy něco, po čem se mohou šířit zprávy (může to být kabel, ale i vzduch jako v případě Wi-Fi a mobilních sítí).
+                Po médiu neposíláme zprávu jen tak, ale musíme ji zakódovat na straně odesílatele, to má na starost
+                <span class="term">kodér</span>, a dekódovat na straně příjemce, což je práce <span class="term">dekodéru</span>.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Zpráva se po zpracování kodérem stane kódem, aby se na druhé straně vysílání po zpracování dekodérem stala zase zprávou
+                    </figcaption>
+                    <img src="coding-crypto/transmission.svg" alt="Schéma odesílatel - příjemce s kodérem, médiem a dekodérem mezi nimi">
+                </figure>
+            </div>
+
+            <p>
+                Kvalita komunikace nezávisí jen na rychlosti přenosu, ale i na jeho spolehlivosti. V případě, kdy nebudeme mít
+                spolehlivý přenos (např. u morseovky nám ve výhledu mohou bránit větve pohybující se ve větru), komunikace se
+                stane nespolehlivou. A přesně to je důvod, proč se zabýváme zmíněnými chybu detekujícími a samoopravnými kódy, protože
+                nám stížené podmínky pomáhají překonat.
+            </p>
+
+            <div class="example">
+                <p>
+                    Představme si situaci, kdy máme běžecký závod, při kterém běžci běhají mezi jednotlivými stanovišti.
+                    S každým stanovištěm máme omezený kontakt (můžeme přenášet pouze jedničky a nuly), přičemž nás zajímá,
+                    zda na daném stanovišti už byli všichni běžci. Máme tedy dvě možné odpovědi: ANO a NE.
+                </p>
+
+                <p>
+                    Zakódujeme si tedy ANO jako 1, NE jako 0. Zeptáme-li se stanoviště, zda jej navštívili všichni běžci,
+                    dostaneme buď 1, nebo 0. Problém nastane, pokud spojení není stoprocentně spolehlivé a čas od času
+                    nám posílanou hodnotu obrátí. V případě, že taková chyba nastane a stanoviště nám pošle ANO (1),
+                    dostaneme NE (0) čistě proto, že při přenosu došlo k chybě.
+                </p>
+
+                <p>
+                    Zkusíme si tedy naše kódování upravit. Odteď budeme používat pro ANO kódové slovo 11 a 00 pro NE. To znamená,
+                    že přenášíme dvojnásobek dat než v přechozím případě, ale pokud dojde k chybě (dostaneme 10 nebo 01),
+                    jsme schopni takovou situaci detekovat a od stanoviště si vyžádat novou odpověď. Tento kód tedy umí
+                    detekovat jednu chybu (v případě, že by se staly chyby dvě, dostáváme se do stejné situace jako
+                    v předešlém případě).
+                </p>
+
+                <p>
+                    Pokud bychom si z nějakého důvodu nechtěli říkat o novou odpověď, můžeme zkusit použít nějaký samoopravný kód.
+                    Naposledy si pojďme změnit způsob kódování našich odpovědí, ANO bude 111, NE bude 000. Jestliže dojde
+                    k chybě s tímto kódováním a obdržíme třeba odpověď 110, můžeme s určitou jistotou říct, že ze
+                    stanoviště nám bylo posláno ANO (111), protože alternativa (NE – 000 a dvě chyby v přenosu) je méně
+                    pravděpodobná.
+                </p>
+
+                <div class="notice">
+                    <p>
+                        V přípdě posledního samoopravného kódu stojí za povšimnutí, že daný kód umí opravit pouze jednu
+                        chybu, ale detekovat umí i dvě. Daní za tuto vlastnost je to, že oproti prvnímu kódování přenášíme
+                        trojnásobek dat (1/0 vs 111/000) na jednu informaci (ANO/NE).
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                Část věnovanou kódování uzavřeme <span class="term">Hammingovou vzdáleností</span>. Hammingova vzdálenost dvou
+                (stejně dlouhých) kódových slov je číslo, které udává, na kolika místech se slova liší. Pokud vezmeme všechna
+                kódová slova daného kódu a spočteme všechny Hammingovy vzdálenosti mezi nimi, nejmenší vzdálenost je Hammingovou
+                vzdáleností celého kódu. Tato vzdálenost udává, ke kolika chybám musí při přenosu dojít, abychom zaměnili dvě
+                různá kódová slova. Jinak řečeno, pokud je Hammingova vzdálenost rovna m, pak kód umí detektovat m-1 chyb.
+            </p>
+
+            <div class="example">
+                <p>
+                    Když se podíváme na kódy z předchozího příkladu, dostaneme následující Hammingovy vzdálenosti:
+                </p>
+                <ul>
+                    <li>1 pro kódování ANO = 1, NE = 0; kód neumí detekovat chyby</li>
+                    <li>2 pro kódování ANO = 11, NE = 00; kód umí detekovat jednu chybu</li>
+                    <li>3 pro kódování ANO = 111, NE = 000; kód umí detekovat dvě chyby</li>
+                </ul>
+
+                <p>
+                    Kdybychom měli kódovat stavy semaforu (červená, oranžová, zelená), pro následující kódy dostaneme odpovídající
+                    vzdálenosti:
+                </p>
+
+                <ul>
+                    <li>2 pro kódování červená = 1100, oranžová = 1001, zelená = 0110</li>
+                    <li>1 pro kódování červená = 11, oranžová = 01, zelená = 00</li>
+                    <li>2 pro kódování červená = 100, oranžová = 010, zelená = 001</li>
+                </ul>
+
+                <p>
+                    Jak je vidět z prvního a posledního kódování semaforu, delší kódová slova nutně neznamenají větší vzdálenost.
+                </p>
+            </div>
+
+            <h2>Šifrování</h2>
+
+            <p>
+                V přechozí části jsme se kódováním snažili řešit situace, kdy musíme zprávu jednak adaptovat k přenosu (morseovka)
+                a jednak reagovat na chyby vzniklé při přenosu. Šifrováním se budeme snažit přenášenou zprávu ochránit před slídivýma
+                očima potenciálního záškodníka.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Alice a Bob si spolu vyměňují zprávu. Eva sleduje přenos na médiu a může si tak přečíst obsah zprávy
+                    </figcaption>
+                    <img src="coding-crypto/eavesdrop.svg" alt="Přenos zprávy mezi Alicí a Bobem, kterou Eva odposlouchává" />
+                </figure>
+
+                <div class="notice">
+                    <p>
+                        V kryptografii se běžně používají jména Alice a Bob pro dvě spolu komunikující strany. Třetí stranou, která
+                        se snaží komunikaci odposlouchávat, bývá obvykle Eva.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                <span class="term">Šifra</span> je předpis (algoritmus) transformace dat na šifrovaná data, přičemž tato šifrovaná data
+                přečte jen ten, kdo vlastní tajnou informaci. Této informaci říkáme <span class="term">klíč</span>. Klíč potřebujeme mít
+                jak při <span class="term">šifrování</span> (anglicky encryption) dat, tak při opačném procesu transformace šifrovaných
+                dat (anglicky ciphertext) zpátky na původní data (anglicky plaintext). Tento opačný proces nazýváme
+                <span class="term">dešifrování</span> (anglicky decryption).
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Alice a Bob tentokrát zprávu před přenosem zašifrují. Eva opět sleduje přenos, ale kvůli šifrování
+                        není schopna si přečíst obsah zprávy
+                    </figcaption>
+                    <img src="coding-crypto/encryption.svg" alt="Přenos zprávy mezi Alicí a Bobem, kterou Eva odposlouchává" />
+                </figure>
+            </div>
+
+            <p>
+                Šifry dělíme na dva typy podle toho, zda klíč, který používáme při šifrování, je stejný jako ten, který používáme při
+                dešifrování. Pokud ano, jde o <span class="term">symetrickou šifru</span>, pokud pokaždé používáme jiný klíč, jde
+                o <span class="term">asymetrickou šifru</span>.
+            </p>
+
+            <h3>Symetrické šifry</h3>
+
+            <p>
+                Jak jsme už zmínili, symetrické šifry využívají stejný klíč pro šifrování i dešifrování. Díky tomu jsou obecně i výpočetně
+                rychlejší než asymetrické šifry. Požadavek, aby obě strany měly stejný klíč, se může ukázat jako problém, protože před
+                zahájením komunikace je potřeba k oběma stranám stejný klíč dostat.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Alice s pomocí klíče zašifruje zprávu a zašifrovaná data pošle Bobovi. Ten s pomocí stejného klíče zprávu
+                        dešifruje. Eva není schopna zprávu dešifrovat, protože nemá stejný klíč jako Alice s Bobem
+                    </figcaption>
+                    <img src="coding-crypto/symetric.svg" alt="Přenos zprávy mezi Alicí a Bobem, kterou Eva odposlouchává" />
+                </figure>
+            </div>
+
+            <p>
+                Klasický příkladem symetrické šifry je Caesarova šifra, kterou používali, jak název napovídá, už starověcí Římané.
+                Myšlenka šifry je přitom jednoduchá. Na začátku mám nějakou zprávu, kterou chci zašifrovat, a nějaké číslo n, které si
+                zvolím. Šifrování probíhá tak, že procházíme text zprávy písmenko po písmenku a místo aktuálního písmene napíšeme
+                písmeno o n pozic v abecedě posunuté. Pochopitelně pokud bychom se dostali na konec abecedy, vrátíme se na začátek
+                (tj. pokud je n = 1 a písmenko je Z, dostaneme v anglické abecedě A, kdežto v české dostaneme Ž). Pro dešifrování pak
+                musíme proces obrátit, písmeno tedy posouváme druhým směrem (např. při dešifrování se z C se při posunu o 2 stane A).
+            </p>
+
+            <div class="example">
+                <details>
+                    <summary>
+                        Zašifruj pomocí Caesarovy šifry s posunem 6 (tj. n = 6) zprávu <q>informatika</q>. Pomocí stejné šifry s posunem 1
+                        dešifruj <q>lszquphsbgjf</q>. Pro jednoduchost ber v úvahu pouze anglickou abecedu. (Výsledek se ti ukáže po kliknutí.)
+                    </summary>
+
+                    <p>
+                        Po zašifrování bys měl dostat <q>otluxsgzoqg</q>.
+                    </p>
+                    <p>
+                        Po dešifrování bys měl dostat <q>kryptografie</q>.
+                    </p>
+                </details>
+            </div>
+
+            <p>
+                Samozřejmě v dnešní době Caesarovu šifru nepoužíváme, protože není bezpečná (k jejímu
+                prolomení nám stačí vyzkoušet všechny posuny, kterých je 25 v případě anglické abecedy
+                a 41 v případě české abecedy) a nemá ani spoustu vlastností, které od dobré šifry
+                vyžadujeme (např. stejná data/písmena jsou šifrována stejně, což má z následek větší
+                náchylnost vůči útokům využívající různé vlastnosti jazyka – některá písmena se v textu
+                objevují častěji než jiná). Příkladem dnes hojně používané symetrické šifry je třeba AES
+                (Advanced Encryption Standard), kterou používáme u Wi-Fi. 
+            </p>
+
+            <h3>Asymetrické šifry</h3>
+
+            <p>
+                U symetrických šifer jsme si říkali, že potenciální slabinou je sdílení klíče mezi stranami
+                ještě před začátkem komunikace. V případě asymetrických šifer tento problém řešit nemusíme,
+                oproti symetrickým šifrám ale platíme rychlostí.
+            </p>
+
+            <p>
+                V případě asymetrické kryptografie má každá komunikující strana dva klíče:
+                <span class="term">veřejný</span> (anglicky public) a <span class="term">soukromý/privátní</span>
+                (anglicky private). Tyto klíče na sobě nejsou nezávislé, naopak, jsou spolu úzce spojené tak, že
+                k dešifrování zprávy zašifrované s pomocí jednoho klíče potřebujeme právě ten druhý klíč.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Za asymetrickou kryptografií je hezká ale poměrně složitá matematika, takže to více
+                    rozebírat nebudeme. Ale pokud sis četl kapitolku věnovanou
+                    <a href="numeral-systems.html">číselným soustavám</a>, možná si vzpomeneš na funkci
+                    modulo. Ta se v asymetrické kryptografii hojně využívá – mluvíme o takzvané modulární
+                    aritmetice.
+                </p>
+            </div>
+
+            <p>
+                Jak je z názvů klíču patrné, jeden je veřejný a každý se k němu může dostat. Druhý je soukromý
+                a nakládat s ním může jen vlastník. Komunikace mezi dvěma stranami pak probíhá tak, že
+                odesílatel zašifruje zprávu pomocí veřejného klíče příjemce. Příjemce dostane zašifrovanou
+                zprávu a protože jako jediný má odpovídající soukromý klíč, je schopen zprávu dešifrovat. Pokud
+                bude chtít na zprávu reagovat, zašifruje odpověď veřejným klíčem původního odesílatele a proces
+                se zopakuje na druhé straně.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Alice pomocí Bobova veřejného klíče zašifruje zprávu a odešle ji Bobovi. Ten ji pomocí svého
+                        soukromého klíče dešifruje. Eva má veřejné klíče Boba i Alice a sleduje přenos, přesto není
+                        schopna zprávu dešifrovat, protože nemá Bobův soukromý klíč.
+                    </figcaption>
+                    <img src="coding-crypto/asymetric.svg" alt="Přenos zprávy mezi Alicí a Bobem, kterou Eva odposlouchává" />
+                </figure>
+            </div>
+
+            <p>
+                V dnešní době je asymetrická kryptografie široce využívaná a to nejen k šifrování (např. RSA),
+                ale třeba i k výměně klíčů (algoritmus Diffie-Hellman), kdy se pomocí asymetrické kryptografie
+                dvě strany bezpečně shodnou na společném klíči – ten pak mohou použít pro symetrickou šifru,
+                pokud je pro ně důležitá třeba rychlost komunikace.
+            </p>
+
+            <p>
+                V poslední době skloňovanou aplikací asymetrické kryptografie je <span class="term">digitální podpis</span>.
+                Ten slouží k ověření pravosti dokumentu. Pokud nám například v e-mailu přistane nějaký dokument,
+                ještě to neznamená, že je pravý a nezměněný. Digitální podpis nám dává mechanismus, jak jeho pravost
+                ověřit.
+            </p>
+
+            <p>
+                Princip je velice podobný šifrování jen s tím rozdílem, že nešifrujeme dokument, ale jeho
+                <span class="term">otisk</span> (anglicky hash), což je unikátní číslo, které je dokumentu přiřazeno
+                <span class="term">hašovací funkcí</span> (anglicky hash function) na základě jeho obsahu. Pokud se
+                obsah změní, změní se i číslo, které nám funkce vrací.
+            </p>
+
+            <p>
+                Abychom nějaký dokument podepsali, vezmeme tento otisk dokumentu a zašifrujeme jej s pomocí našeho soukromého
+                klíče – náš podpis je výsledkem šifry. Následně dokument odešleme i s podpisem. Druhá strana pak dokument
+                s podpisem ověří tak, že si sama spočítá otisk dokumentu. Následně s pomocí našeho veřejného klíče dešifruje
+                náš podpis a porovná, zda se výsledek shoduje se spočítaným otiskem. Pokud ano, druhá strana ví, že dokument
+                dorazil nezměnen a že jsme jej podepsali my (použili jsme soukromý klíč). 
+            </p>
+
+            <div class="summary">
+                <h3>Shrnutí</h3>
+
+                V této kapitole jsme si vysvětlili rozdíl mezi kódováním a šifrováním včetně jejich několika aplikací. Šifry
+                jsme si rozdělili na symetrické a asymetrické, řekli jsme si, čím se liší a opět jsme zmínili několik možností
+                využití.
+            </div>
+
+            <div class="quickcheck">
+                <p>Na konci této kapitoly bys měl být schopen:</p>
+
+                <ul>
+                    <li>vysvětlit rozdíl mezi kódováním a šifrováním</li>
+                    <li>popsat úlohu klíče v šifrování</li>
+                    <li>vysvětlit v čem se liší symetrické šifrování od asymetrického</li>
+                    <li>říct k čemu slouží digitální podpis</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

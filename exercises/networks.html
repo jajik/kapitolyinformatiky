@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Cvičení: Počítačové sítě a internet | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/exercises/networks.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="../chapters/index.html">Kapitoly</a></li>
+                <li><a href="index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Procvičování: Počítačové sítě a internet</h1>
+
+            <div class="warn">
+                <p>
+                    Pokud jsi ještě nečetl kapitolu Počítačové sítě a internet, teď je vhodný čas, jinak
+                    budou cvičení níže zbytečně těžká.
+                </p>
+            </div>
+
+            <h2>IP adresy, masky, sítě a zařízení</h2>
+
+            <p>
+                1) Na základě IP adresy a masky sítě urči adresu sítě (prefix) a identifikátor zařízení. Výsledky
+                se ti ukáží po kliknutí.
+            </p>
+
+            <div class="double">
+                <ul>
+                    <li>
+                        <details>
+                            <summary>192.168.25.1/24</summary>
+                            <ul>
+                                <li>adresa sítě: 192.168.25.0</li>
+                                <li>zařízení: 0.0.0.1</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>192.168.25.1/16</summary>
+                            <ul>
+                                <li>adresa sítě: 192.168.0.0</li>
+                                <li>zařízení: 0.0.25.1</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>192.168.25.1/12</summary>
+                            <ul>
+                                <li>adresa sítě: 192.160.0.0</li>
+                                <li>zařízení: 0.8.25.1</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>192.168.25.1/23</summary>
+                            <ul>
+                                <li>adresa sítě: 192.168.24.0</li>
+                                <li>zařízení: 0.0.1.1</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>192.168.25.1/24</summary>
+                            <ul>
+                                <li>adresa sítě: 192.168.25.0</li>
+                                <li>zařízení: 0.0.0.1</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>172.18.132.12/20</summary>
+                            <ul>
+                                <li>adresa sítě: 172.18.128.0</li>
+                                <li>zařízení: 0.0.4.12</li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+                
+                <ul>
+                    <li>
+                        <details>
+                            <summary>10.8.11.4/10</summary>
+                            <ul>
+                                <li>adresa sítě: 10.0.0.0</li>
+                                <li>zařízení: 0.8.11.4</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>10.200.11.4/10</summary>
+                            <ul>
+                                <li>adresa sítě: 10.196.0.0</li>
+                                <li>zařízení: 0.8.11.4</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>75.12.168.42/22</summary>
+                            <ul>
+                                <li>adresa sítě: 75.12.168.0</li>
+                                <li>zařízení: 0.0.0.42</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>10.0.20.33/30</summary>
+                            <ul>
+                                <li>adresa sítě: 10.0.20.32</li>
+                                <li>zařízení: 0.0.0.1</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>168.240.245.23/22</summary>
+                            <ul>
+                                <li>adresa sítě: 168.240.243.0</li>
+                                <li>zařízení: 0.0.2.23</li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>172.16.32.15/15</summary>
+                            <ul>
+                                <li>adresa sítě: 172.16.0.0</li>
+                                <li>zařízení: 0.0.32.15</li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+
+            <p>
+                2) Pro každou ze sítí rozhodni, zda uvedené adresy identifikují zařízení uvnitř této sítě.
+                Jinými slovy budeme si hrát na směrovač – router. Výsledky opět uvidíš po kliknutí na příklad.
+            </p>
+
+            <div class="double">
+                <ul>
+                    <li>
+                        <details>
+                            <summary>
+                                <p>
+                                    síť: 192.168.10.1/24
+                                </p>
+                                <ol>
+                                    <li>192.168.10.1</li>
+                                    <li>192.168.10.253</li>
+                                    <li>192.168.10.172</li>
+                                </ol>
+                            </summary>
+                            <p>
+                                Všechny adresy patří do sítě.
+                            </p>
+                        </details>
+                    </li>
+
+                    <li>
+                        <details>
+                            <summary>
+                                <p>
+                                    síť: 192.168.10.1/16
+                                </p>
+                                <ol>
+                                    <li>192.170.11.1</li>
+                                    <li>192.168.10.257</li>
+                                    <li>192.168.10.131</li>
+                                </ol>
+                            </summary>
+                            <p>
+                                Pouze poslední adresa patří do sítě. První adresa se od adresy sítě liší v druhém bajtu
+                                (168 vs 170). Druhá adresa není ani validní adresou, protože hodnota posledního bajtu
+                                je vyšší než povolený rozsah (0-255).
+                            </p>
+                        </details>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <details>
+                            <summary>
+                                <p>
+                                    síť: 172.20.132.70/17
+                                </p>
+                                <ol>
+                                    <li>172.20.132.34</li>
+                                    <li>172.20.128.42</li>
+                                    <li>172.20.166.9</li>
+                                </ol>
+                            </summary>
+                            <p>
+                                Všechny adresy patří do sítě (adresa sítě je 172.20.128.0.0).
+                            </p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>
+                                <p>
+                                    síť: 128.41.73.211/12
+                                </p>
+                                <ol>
+                                    <li>128.32.73.211</li>
+                                    <li>128.40.60.112</li>
+                                    <li>128.47.81.89</li>
+                                </ol>
+                            </summary>
+                            <p>
+                                Všechny adresy patří do sítě (adresa sítě je 128.32.0.0).
+                            </p>
+                        </details>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>Vyhledej si</h2>
+
+            <p>
+                1) Zjisti jakou IP adresu má zařízení, na kterém si čteš tento text. Typicky jde tuto
+                informaci najít v nastavení v informacích o připojení, ale nejspíš se neobejdeš
+                bez hledání na internetu.
+            </p>
+
+            <p>
+                2) Zjisti, jakou adresu má server, na kterém běží webové stránky tvojí školy.
+            </p>
+
+            <p>
+                To můžeš udělat pomocí nástrojů, které jsou na počítačích běžně dostupné. Otevři si
+                příkazový řádek a napiš příkaz <code>nslookup</code>
+                následovaný webovou adresou školy (tzv. argument příkazu) a stiskni Enter.
+            </p>
+
+            <p>
+                Pro zjištění adresy serveru, na kterém běží stránky Fakulty informatiky MU v Brně
+                by příkaz vypadal takto: <code>nslookup fi.muni.cz</code>. Pro ověření můžeš zkusit
+                do vyhledávače vložit IP adresu, kterou ti sdělí příkaz výše, a pokud je vše správně
+                nakonfigurováno, měl bys vidět stejné webové stránky jako když použiješ webovou adresu.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Příkaz <code>nslookup</code> by měl být dostupný jak na operačním systému Windows,
+                    tak na macOS i Linuxu. Pokud narazíš na chybu, je nejlepší poradit se s vyhledávačem.
+                </p>
+            </div>
+
+            <p>
+                Podívej se, jaké IP adresy používají alespoň tři weby, které znáš.
+            </p>
+
+            <p>
+                3) Podívej se, jakými sítěmi projde paket, který pošleme na adresu Google. K tomu můžeš
+                použít nástroj <code>traceroute</code> na Linuxu/macOS, nebo <code>tracert</code>
+                na Windows, přičemž jako argument příkazu zadáš <code>google.com</code>.
+            </p>
+
+            <p>
+                Následně si zkus stejný příkaz pro webovou adresu školy. Liší se sítě po cestě paketu?
+            </p>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1000"
+   viewBox="0 0 264.58333 264.58334"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="paper-rock-scissors.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="1000px"
+     inkscape:zoom="1.0289025"
+     inkscape:cx="541.83948"
+     inkscape:cy="483.52492"
+     inkscape:window-width="3072"
+     inkscape:window-height="1664"
+     inkscape:window-x="1080"
+     inkscape:window-y="219"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path18222" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path18219" />
+    </marker>
+    <rect
+       x="-62.433314"
+       y="-71.413688"
+       width="469.56488"
+       height="433.9856"
+       id="rect10684" />
+  </defs>
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="26.592775"
+       y="82.600395"
+       id="text3990"><tspan
+         sodipodi:role="line"
+         id="tspan3988"
+         style="font-size:14.1111px;stroke-width:0.264583"
+         x="26.592775"
+         y="82.600395">kámen</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text10682"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;white-space:pre;shape-inside:url(#rect10684)" />
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.846667"
+       id="path13628"
+       cx="51.101547"
+       cy="77.302467"
+       r="30.578922" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="192.3036"
+       y="82.658981"
+       id="text3990-4"><tspan
+         sodipodi:role="line"
+         id="tspan3988-1"
+         style="font-size:14.1111px;stroke-width:0.264583"
+         x="192.3036"
+         y="82.658981">nůžky</tspan></text>
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.846667"
+       id="path13628-8"
+       cx="213.63741"
+       cy="77.361053"
+       r="30.578922" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.1111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="110.42194"
+       y="205.84438"
+       id="text3990-5"><tspan
+         sodipodi:role="line"
+         id="tspan3988-9"
+         style="font-size:14.1111px;stroke-width:0.264583"
+         x="110.42194"
+         y="205.84438">papír</tspan></text>
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.846667"
+       id="path13628-7"
+       cx="129.63905"
+       cy="200.54645"
+       r="30.578922" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 81.867742,77.148656 H 180.9105"
+       id="path18133" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="m 63.666367,106.87746 47.998753,69.05235"
+       id="path18135" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="M 202.16176,105.41403 151.2495,176.41398"
+       id="path18137" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="121.43354"
+       y="71.655975"
+       id="text21675"><tspan
+         sodipodi:role="line"
+         id="tspan21673"
+         style="stroke-width:0.264583"
+         x="121.43354"
+         y="71.655975">tupí</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="182.14517"
+       y="148.58737"
+       id="text27985"><tspan
+         sodipodi:role="line"
+         id="tspan27983"
+         style="stroke-width:0.264583"
+         x="182.14517"
+         y="148.58737">stříhají</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="66.739861"
+       y="155.91637"
+       id="text27985-5"><tspan
+         sodipodi:role="line"
+         id="tspan27983-3"
+         style="stroke-width:0.264583"
+         x="66.739861"
+         y="155.91637">balí</tspan></text>
+  </g>
+</svg>

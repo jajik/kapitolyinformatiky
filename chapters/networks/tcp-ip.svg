@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="1150"
+   viewBox="0 0 264.58333 304.27084"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="tcp-ip.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     width="1000px"
+     inkscape:zoom="0.58"
+     inkscape:cx="561.2069"
+     inkscape:cy="483.62069"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="1100px" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;stroke:#000001;stroke-width:1.05833334;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect955-8"
+       width="210.20953"
+       height="72.565491"
+       x="27.692974"
+       y="221.35022" />
+    <rect
+       style="fill:none;stroke:#000001;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect955-5"
+       width="210.75571"
+       height="31.489174"
+       x="27.419886"
+       y="179.44298" />
+    <rect
+       style="fill:none;stroke:#000001;stroke-width:1.05833334;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect955-53"
+       width="209.82202"
+       height="112.05586"
+       x="27.886723"
+       y="13.532259" />
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="96.989037"
+       y="80.126152"
+       id="text8842-1"><tspan
+         sodipodi:role="line"
+         id="tspan8840-8"
+         style="stroke-width:0.264583"
+         x="96.989037"
+         y="80.126152">Aplikační</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="96.989037"
+         y="97.76503"
+         id="tspan10510" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="86.5495"
+       y="205.59709"
+       id="text8842-4"><tspan
+         sodipodi:role="line"
+         id="tspan8840-3"
+         style="stroke-width:0.264583"
+         x="86.5495"
+         y="205.59709">Internetová</tspan></text>
+    <rect
+       style="fill:none;stroke:#000001;stroke-width:1.05833;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect955-5-3"
+       width="210.75571"
+       height="31.489174"
+       x="27.419891"
+       y="137.10959" />
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="88.136993"
+       y="161.14708"
+       id="text8842-4-6"><tspan
+         sodipodi:role="line"
+         id="tspan8840-3-7"
+         style="stroke-width:0.264583"
+         x="88.136993"
+         y="161.14708">Transportní</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
+       x="73.141426"
+       y="264.11188"
+       id="text8842-3"><tspan
+         sodipodi:role="line"
+         id="tspan8840-38"
+         style="stroke-width:0.264583"
+         x="73.141426"
+         y="264.11188">Síťového rozhraní</tspan></text>
+  </g>
+</svg>

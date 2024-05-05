@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Algoritmus | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/chapters/algorithms.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+
+            <h1>Algoritmus</h1>
+
+            <p>
+                Pojem algoritmu je s informatikou spojen už od počátku. Co to ale algoritmus je?
+                Pojďme si nejdřív s pomocí příkladů, které všichni známe, vybudovat nějakou základní
+                intuici.
+            </p>
+
+            <p>
+                Jedním z příkladů algoritmu je recept, který jsme snad alespoň jednou viděli všichni.
+                Recepty (pracovní postupy), které nám říkají, jak vstup (suroviny) pomocí
+                přesných kroků přetvořit do výstupu (dobrého jídla). Podobným příkladem algoritmu
+                může být třeba LEGO. Každá stavebnice přijde rozložená na jednotlivé dílky (vstup),
+                které pak podle jednotlivých kroků návodu skládáme dohromady (výstup).
+            </p>
+
+            <p>
+                Není však nutné, aby výsledkem algoritmu byla nějaká <q>složenina</q>, algoritmus lze
+                použít i k reprodukci. Možná na první pohled ne úplně typickým příkladem je notový
+                záznam. Ten je vždy určený nějakému hlasu nebo jinému hudebnímu nástroji, s jehož
+                pomocí následně noty hrajeme, abychom slyšeli výstup/výsledek, danou skladbu.
+            </p>
+
+            <p>
+                U všech příkladů, které jsme si právě ukázali, najdeme společné znaky. Vždycky pracujeme
+                s nějakým vstupem, ať už jsou to suroviny, dílky stavebnice nebo hudební nástroj, a ke
+                každému algoritmu máme nějaký předem definovaný výstup, ať už jídlo, složenou stavebnici či
+                krásnou skladbu. Samotným algoritmem pak myslíme danou posloupnost kroků, které musíme
+                vykonat, abychom ze vstupu dostali výstup.
+            </p>
+
+            <h2>Vlastnosti algoritmu</h2>
+
+            <p>
+                Teď, když jsme si několik příkladů algoritmu ukázali, se nad nimi pojďme zamyslet trošku
+                hlouběji. Řekli jsme si, že takový kuchyňský recept může být příkladem algoritmu, protože
+                s takovým receptem jsme se snad každý setkali, někteří podle něj dokonce i nějaké to jídlo
+                více či méně úspěšně připravovali. Ve skutečnosti jsi ale byl svědkem redukce, jak
+                v informatice (matematice) říkáme převedení jednoho problému na jiný. Naše chápání
+                <q>algoritmu</q> je teď úzce závislé na pojmu <q>receptu</q>, tudíž logicky vyvstává
+                otázka, co je to recept?
+            </p>
+
+            <h3>Pečeme chleba</h3>
+
+            <p>
+                Kdybychom chtěli upéct chleba podle receptu, který má v seznamu surovin uvedeno <q>mouka</q>,
+                tak nám existence receptu práci moc neulehčí. Kolik mouky do chleba přijde? A jaký typ mouky
+                máme použít? To z jednoho slovíčka nezjistíme a chleba tak těžko upečeme. Naopak pokud by náš recept
+                vyžadoval konkrétní značku mouky koupenou v konkrétním obchodě v jediném městě na druhém konci
+                republiky ve čtyři hodiny ráno, budou naše vstupy zase (zbytečně) příliš svazující. Od receptu
+                tudíž požadujeme jasně definované vstupy, tedy v případě mouky typicky hmotnost a druh, při
+                zachování jisté obecnosti. To se projeví tak, že náš nutně nezajímá značka mouky, ani to, kdy a
+                ve kterém obchodě jsme ji koupili.
+            </p>
+
+            <p>
+                Neméně důležitý je samotný pracovní postup, který ze surovin (vstupu) vytvoří chleba (výstup).
+                Jak jsme si řekli, tento postup se skládá z jednotlivých kroků, které musí být při jistém stupni
+                volnosti jasně definovány. V přípravě námi pečeného chleba dojde k momentu, kdy budeme muset
+                smíchat všechny suroviny dohromady. <q>Smíchat</q> má jasný význam, ale zároveň nám dává dost
+                prostoru, abychom se rozhodli, zdali použijeme vlastní ruce nebo vařečku. Naproti tomu se při
+                přípravě chleba nevyhneme použití kvásku, ale takové <q>zadělání kvásku</q> je pojem, který
+                nemusí být především začínajícím pekařům jasný, a je proto potřeba mít předem jasno v tom, jaké
+                kroky máme v receptu k dispozici. Jednoznačná musí být i posloupnost jednotlivých kroků, nemůže
+                se nám stát, že bychom uprostřed provádění algoritmu nevěděli, jak pokračovat dále. Koneckonců
+                většinu algoritmů dnes provádějí počítače a ty přemýšlet neumí, naopak příkazy umí provádět velice
+                rychle.
+            </p>
+
+            <p>
+                Pokud použijeme předepsané suroviny a provedeme všechny kroky receptu, měli bychom skončit
+                s hotovým chlebem.
+            </p>
+
+            <h2>Algoritmus podruhé, tentokrát teoreticky</h2>
+
+            <p>
+                Shrňme si všechno, co jsme si řekli výše ještě jednou, tentokrát bez kuchařské omáčky kolem.
+            </p>
+
+            <p>
+                <span class="term">Algoritmus</span> je posloupnost kroků, které nám ze vstupu udělají výstup a která splpňuje
+                několik dalších podmínek. Algoritmus musí být obecný, musí být konečný, jednoznačný a korektní. Pojďme
+                si tyto čtyři vlastnosti rozebrat.
+            </p>
+
+            <p>
+                První podmínkou, kterou na algorimus klademe, je <span class="term">obecnost</span>. Ta nám říká, že algoritmus
+                by měl být schopen řešit nějaký problém, ne nějakou jednu konkrétní podobu. Tedy pokud budeme mít
+                algorimus pro hledání kořenů kvadratických rovnic (tj. ax<sup>2</sup> + bx + c), chtěli bychom, aby
+                fungoval pro libovolnou volbu koeficientů a, b, c, a nikoliv jen pro případy, kdy se první dva rovnají
+                jedné a c nule.
+            </p>
+
+            <p>
+                Druhou vlastností je <span class="term">konečnost</span>. Tuto podmínku klademe na posloupnost kroků, abychom
+                zajistili, že při správném vykonávání kroků dostaneme nakonec výsledek. V případě, že by posloupnost
+                kroků byla nekonečná, nemá smysl se o výstupu vůbec bavit, protože se k němu nikdy nedostaneme.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Jestli budeš někdy programovat, takřka s jistotou se ti povede napsat tzv. cyklící program. To je program,
+                    ve kterém je chyba, která způsobí, že výpočet nikdy neskončí.
+                </p>
+            </div>
+
+            <p>
+                Další podmínkou je <span class="term">jednoznačnost</span>. Ta požaduje, aby v každém kroku bylo jasně určeno, jak bude
+                výpočet pokračovat, respektive jaký krok bude následovat. Zároveň nám z této vlastnosti plyne, že i význam / akce
+                odpovídající krokům musí být jasně daná. Kdyby postup nebyl jednoznačný, dostali bychom se do podobné situace,
+                jako kdyby někdo vytrhl několik stránek návodu pro LEGO. Z těch následujících bychom se asi dozveděli, k čemu
+                máme dojít, ale nevěděli bychom jak.
+            </p>
+
+            <p>
+                Poslední vlastností je <span class="term">korektnost</span>. Ta požaduje, aby algoritmus, který dostane validní vstup,
+                vyprodukoval správný (korektní) výsledek, tedy odpovídající výstup. Důvod, proč po algoritmu tuto vlastnost
+                vyžadujeme, je snad nasnadě.
+            </p>
+
+            <p>
+                Teď když jsme si popsali algoritmus a jeho vlastnosti, pojďme se podívat na několik různých druhů zápisů
+                algoritmů, se kterými se můžeme setkat.
+            </p>
+
+            <h2>Zápisy algoritmu</h2>
+
+            <p>
+                V úvodu textu jsme už o několika podobách zápisu algoritmů zmínili; mluvili jsme o receptech, o notách a LEGO návodech.
+                Všechny tři příklady jsou shodou náhod zapsány úplně jiným způsobem. Zatímco recept máme popsaný běžným jazykem a je
+                alespoň teoreticky obecně srozumitelný, notový zápis bude pro mnohé oříšek. Naopak návod k LEGO je tak plný obrázků,
+                že snad ani nevyžaduje gramotnost. Neměli bychom zapomenout na programy, které tvoří kategorii samy o sobě. Pojďme se
+                u každé kategorie na chvíli zastavit.
+            </p>
+
+            <h3>Slovní zápis</h3>
+
+            <p>
+                Slovní zápis algoritmu je jedním z nejpřístupnějších, protože používá běžnou řeč, kterou se lidé dorozumívají mezi sebou.
+                To s sebou nese i jistá rizika, především co se jednoznačnosti týče. Oproti jiným způsobům zápisu může být tento zápis
+                mnohem delší.
+            </p>
+
+            <h3>Obrázky a diagramy</h3>
+
+            <p>
+                Ne nadarmo se říká, že obraz někdy vydá za tisíc slov. I algoritmy můžeme zapisovat graficky; obrázkové návody už jsme
+                si zmínili, ale můžeme sem zařadit i diagramy.
+            </p>
+
+            <div class="example double">
+                <figure>
+                    <figcaption>Diagram znázorňující pravidla hry kámen-nůžky-papír</figcaption>
+                    <img src="algorithms/paper-rock-scissors.svg" alt="" />
+                </figure><figure>
+                    <figcaption>Návod popisující skládání vlaštovky</figcaption>
+                    <img src="algorithms/paperplane.svg" alt="" />
+                </figure>
+            </div>
+
+            <h3>Doménově specifické</h3>
+
+            <p>
+                Jak jsme si již řekli, notový zápis je způsobem zápisu algoritmu, který je poněkud specifický. Stejně doménově specifickým
+                zápisem je třeba matematický zápis (i když u něj by jeden doufal, že mu bude rozumět o trošku více lidí).
+            </p>
+
+            <h3>Pseudokód a programy</h3>
+
+            <p>
+                Poslední kategorií, které jsme se doposud vyhýbali, jsou programy a různé pseudokódy. Teoreticky bychom tuto kategorii mohli
+                schovat pod doménově specifické zápisy, na stranu druhou už jen programovací jazyky jsou tak širokým tématem, že mi přijde
+                vlastní kategorie zaslouženou.
+            </p>
+
+            <p>
+                Programem se typicky myslí nějaký algoritmus zapsaný v konkrétním programovacím jazyce. Program se skládá ze sekvence příkazů
+                daného programovacího jazyka, přičemž je jasně specifikováno, co má počítač při kterém příkazu vykonat. Takto zapsaný
+                algoritmus jsme pak schopni spustit na patřičně vybaveném počítači.
+            </p>
+
+            <p>
+                Pseudokódem pak myslíme zápis, který připomíná způsob, jakým píšeme programy v programovacích
+                jazycích, ale oproti nim si dovolujeme odhlédnout od nedůležitých detailů. Například pokud mám algoritmus skládající se
+                z mnoha kroků, přičemž jedním z nich je seřazení nějaké číselné frekvence, při popisu algoritmu pseudokódem v odpovídajícím
+                kroku uvedeme, že sekvenci setřídíme. V běžném programovacím jazyce bychom museli použít konkrétní třídící algoritmus/funkci.
+                Z toho plyne i trošku jiný účel využití těchto dvou zápisů; pseudokód typicky použijeme tam, kde chceme demonstrovat myšlenku
+                algoritmu, program pak když chceme, aby jej počítač provedl.
+            </p>
+
+            <div class="summary">
+                <h3>Shrnutí</h3>
+                <p>
+                    Abychom se mohli bavit o algoritmu, potřebujeme mít specifikovaný vstup, výstup a posloupnost kroků, které jsou jasně
+                    definované a můžeme je v algoritmu použít. K tomu musí mít každý algoritmus čtyři vlastnosti:
+                </p>
+
+                <ul>
+                    <li>obecnost– algoritmus řeší danou úlohu a ne pár konkrétních případů, lze jej použít pro sadu vstupů</li>
+                    <li>konečnost – posloupnost kroků, ze kterých se algoritmus skládá, je konečná</li>
+                    <li>jednoznačnost – v každém kroku algoritmu máme jasně definováno, jaký krok má následovat a jaké akci krok odpovídá</li>
+                    <li>korektnost – při korektním vstupu dostaneme odpovídající výstup</li>
+                </ul>
+
+                <p>
+                    Algoritmy lze zapsat mnoha způsoby. My jsme si tyto způsoby rozdělili do čtyř kategorií takto:
+                </p>
+                <ul>
+                    <li>zápis v běžném jazyce</li>
+                    <li>pomocí obrázků a diagramů</li>
+                    <li>doménově specifický zápis</li>
+                    <li>programy a pseudokódy</li>
+                </ul>
+            </div>
+
+            <div class="quickcheck">
+                <p>Na konci této kapitoly bys měl být schopen:</p>
+
+                <ul>
+                    <li>intuitivně vysvětlit pojem algoritmu</li>
+                    <li>uvést několik příkladů algoritmu z reálného světa</li>
+                    <li>předvést alespoň tři různé zápisy algoritmu, se kterými se můžeme setkat</li>
+                </ul>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

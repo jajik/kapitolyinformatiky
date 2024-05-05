@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Cvičení: Grafy | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/exercises/graphs.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="../chapters/index.html">Kapitoly</a></li>
+                <li><a href="index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Procvičování: Grafy</h1>
+
+            <div class="warn">
+                <p>
+                    Pokud jsi ještě nečetl kapitolu Grafy, teď je vhodný čas, jinak
+                    budou cvičení níže zbytečně těžká.
+                </p>
+            </div>
+
+            <div class="warn">
+                <p>
+                    Většina příkladů v této kapitole obsahuje i řešení (zobrazí se ti po kliknutí).
+                    Více než v jiných kapitolách a cvičeních i zde platí, že prezentované správné
+                    výsledky nemusí být jediné správné. Pokud vymyslíš jiné (správné) řešení, tím
+                    lépe pro tebe.
+                </p>
+            </div>
+
+            <h2>Základní pojmy: cesta, podgraf, souvislost, kostra</h2>
+
+            <p>
+                1) Spočítej v následujících grafech délku všech nejkratších cest mezi vrcholy.
+            </p>
+
+            <div class="triple">
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+
+                            </figcaption>
+                            <img src="graphs/paths1.svg" alt="Graf s vrcholy A, B, C, D, E, F a hranami AF, BE, CE, CF, DE, EF" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th>A</th><td>0</td><td>3</td><td>2</td><td>3</td><td>2</td><td>1</td></tr>
+                                <tr><th>B</th><td>3</td><td>0</td><td>2</td><td>2</td><td>1</td><td>2</td></tr>
+                                <tr><th>C</th><td>2</td><td>2</td><td>0</td><td>2</td><td>1</td><td>1</td></tr>
+                                <tr><th>D</th><td>3</td><td>2</td><td>2</td><td>0</td><td>1</td><td>2</td></tr>
+                                <tr><th>E</th><td>2</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                                <tr><th>F</th><td>1</td><td>2</td><td>1</td><td>2</td><td>1</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+
+                            </figcaption>
+                            <img src="graphs/paths2.svg" alt="Ohodnocený graf s vrcholy A, B, C, D, E, F a hranami AF (2), BE (1), CE (1), CF (5), DE (4), EF (3)" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th>A</th><td>0</td><td>6</td><td>6</td><td>9</td><td>5</td><td>2</td></tr>
+                                <tr><th>B</th><td>6</td><td>0</td><td>6</td><td>5</td><td>1</td><td>4</td></tr>
+                                <tr><th>C</th><td>6</td><td>2</td><td>0</td><td>5</td><td>1</td><td>4</td></tr>
+                                <tr><th>D</th><td>9</td><td>5</td><td>5</td><td>0</td><td>4</td><td>7</td></tr>
+                                <tr><th>E</th><td>5</td><td>1</td><td>1</td><td>4</td><td>0</td><td>3</td></tr>
+                                <tr><th>F</th><td>2</td><td>4</td><td>4</td><td>7</td><td>3</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+
+                            </figcaption>
+                            <img src="graphs/paths3.svg"
+                                 alt="Ohodnocený graf s vrcholy A, B, C, D, E, F a hranami AB (3), AC (3), AE (21), AF (1), BC (5), BD (1), BE (12), BF (8), CE (4), CF (7), DF (2), EF (18)" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><th>A</th><td>0</td><td>3</td><td>3</td><td>3</td><td>7</td><td>1</td></tr>
+                                <tr><th>B</th><td>3</td><td>0</td><td>5</td><td>1</td><td>9</td><td>3</td></tr>
+                                <tr><th>C</th><td>3</td><td>5</td><td>0</td><td>6</td><td>4</td><td>4</td></tr>
+                                <tr><th>D</th><td>3</td><td>1</td><td>6</td><td>0</td><td>10</td><td>2</td></tr>
+                                <tr><th>E</th><td>7</td><td>9</td><td>4</td><td>10</td><td>0</td><td>8</td></tr>
+                                <tr><th>F</th><td>1</td><td>4</td><td>4</td><td>2</td><td>8</td><td>0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+            </div>
+
+            <p>
+                2) Vyber v následujích grafech podgraf, který splňuje dané podmínky.
+            </p>
+
+            <div class="triple">
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Souvislý podgraf o alespoň třech vrcholech.
+                            </figcaption>
+                            <img src="graphs/subgraph1.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Podgraf o čtyřech vrcholech s hranami tak, aby mezi dvěma libovolnými vrcholy vedla cesta (podmínka souvislosti).
+                        </figcaption>
+                        <img src="graphs/subgraph1-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Podgraf s alespoň jednou hranou takový, že obsahuje 3 vrcholy, mezi kterými nevede žádná cesta.
+                            </figcaption>
+                            <img src="graphs/subgraph2.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Podgraf obsahuje hranu AF a mezi jeho vrcholy A, E, C nevede žádná cesta.
+                        </figcaption>
+                        <img src="graphs/subgraph2-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Podgraf, který obsahuje právě ty vrcholy, které leží na nejkratší cestě mezi C a F se všemi hranami.
+                            </figcaption>
+                            <img src="graphs/subgraph3.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Nejkratší cesta z F do C vede přes vrcholy A, B, E. Vynechali jsme tedy vrchol D se všemi hranami, které
+                            do něj vedou.
+                        </figcaption>
+                        <img src="graphs/subgraph3-solution.svg" alt="" />
+                    </figure>
+                </details>
+            </div>
+
+            <p>
+                3) Odpověz na otázky ke kostrám následujících grafů.
+            </p>
+
+            <div class="triple">
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Je vyznačený podgraf minimální kostrou grafu?
+                            </figcaption>
+                            <img src="graphs/spanning-tree1.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Vyznačený podgraf není kostrou, protože mezi vrcholy A-B-E-C-F existuje cyklus, takže můžeme jednu
+                            z hran odebrat bez toho, aniž by graf přestal být souvislý. Odebráním libovolné z těchto hran dostaneme kostru.
+                        </figcaption>
+                        <img src="graphs/spanning-tree1-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Má graf níže kostru? Pokud ano, vyznač ji. Pokud ne, dokáže přidáním nebo
+                                odebráním hrany nebo vrcholu vytvořit graf, který má minimální kostru?
+                            </figcaption>
+                            <img src="graphs/spanning-tree3.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Původní graf neměl kostru, přidáním hrany mezi DE jsme vytvořili graf, který kostru má.
+                        </figcaption>
+                        <img src="graphs/spanning-tree3-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Je vyznačená kostra minimální kostrou?
+                            </figcaption>
+                            <img src="graphs/spanning-tree2.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Není. Kostra obsahující hranu DF místo hrany AB je menší (součet hodnot hran je nižší).
+                        </figcaption>
+                        <img src="graphs/spanning-tree2-solution.svg" alt="" />
+                    </figure>
+                </details>
+            </div>
+
+            <h2>Neohodnocené a ohodnocené grafy</h2>
+
+            <p>
+                1) Převeď následující neohodnocené grafy na ohodnocené tak, aby podmínky u každého
+                grafu byly zachovány.
+            </p>
+
+            <div class="triple">
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Všechny nejkratší cesty v novém ohodnoceném grafu musí vést přes stejné vrcholy ve stejném pořadí.
+                            </figcaption>
+                            <img src="graphs/weighted-graph1.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Stačí všem hranám přiřadit stejnou cenu.
+                        </figcaption>
+                        <img src="graphs/weighted-graph1-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Ohodnoť následující graf tak, aby hrana EF byla nejdražší v celém grafu a nejkratší cesta
+                                z D do F vedla přes A. 
+                            </figcaption>
+                            <img src="graphs/weighted-graph2.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Je potřeba dát si pozor, aby hrany CE a EF nebyly příliš levné.
+                        </figcaption>
+                        <img src="graphs/weighted-graph2-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+                                Ohodnoť následující graf tak, aby hrana BD byla nejdražší v celém grafu a tato cena odpovídala součtu
+                                ohodnocení hran BE a CD. Nejkratší cesta z C do A musí vést přes vrchol F.
+                            </figcaption>
+                            <img src="graphs/weighted-graph3.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Hraně BD jsme určili cenu 66, hranám BE a CD jsme přiřadili polovinu.
+                        </figcaption>
+                        <img src="graphs/weighted-graph3-solution.svg" alt="" />
+                    </figure>
+                </details>
+            </div>
+
+            <p>
+                2) Zatím jsme převáděli grafy z neohodnocených na ohodnocené. Převeď následující
+                ohodnocené grafy na neohodnocené tak, aby délka nejkratších cest zůstala zachována
+                (např. pokud je cesta mezi vrcholy X a Y dvakrát tak dlouhá jako cesta mezi vrcholy
+                V a W, pak v neohodnoceném grafu musí být tento vztah zachován).
+            </p>
+
+            <div class="notice">
+                <p>
+                    Nápověda: Možná ti pomůže, když do nových (neohodnocených) grafů přidáš nějaké vrcholy nebo hrany, případně když nějaké odebereš.
+                </p>
+            </div>
+
+            <div class="triple">
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+
+                            </figcaption>
+                            <img src="graphs/weighted-graph4.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Všechny hrany měly stejné ohodnocení, takže při délce cest rozhodovala struktura grafu. Zapomeneme
+                            na ohodnocení a máme odpovídající neohodnocený graf.
+                        </figcaption>
+                        <img src="graphs/weighted-graph4-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+
+                            </figcaption>
+                            <img src="graphs/weighted-graph6.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            Univerzálním řešením je přidat nové pomocné vrcholy, které odpovídajícím způsobem prodlouží dané cesty.
+                        </figcaption>
+                        <img src="graphs/weighted-graph6-solution.svg" alt="" />
+                    </figure>
+                </details>
+
+                <details>
+                    <summary>
+                        <figure>
+                            <figcaption>
+
+                            </figcaption>
+                            <img src="graphs/weighted-graph5.svg" alt="" />
+                        </figure>
+                    </summary>
+                    <!-- solution -->
+                    <figure>
+                        <figcaption>
+                            V tomto případě jsme si dovolili dvě hrany smazat a vrcholem jsme nafoukli pouze hranu mezi BF. Alternativně
+                            jsme mohli zvolit stejný přístup jako v předchozím grafu.
+                        </figcaption>
+                        <img src="graphs/weighted-graph5-solution.svg" alt="" />
+                    </figure>
+                </details>
+            </div>
+
+            <h2>Vyhledej si</h2>
+
+            <p>
+                1) S pomocí online map vytvoř graf v okolí školy nebo domova s vyznačenou
+                cestou na zastávku městské hromadné dopravy nebo obchodu.
+            </p>
+
+            <p>
+
+            </p>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

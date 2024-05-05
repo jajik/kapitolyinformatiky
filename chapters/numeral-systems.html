@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Číselné soustavy | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/chapters/numeral-systems.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Číselné soustavy</h1>
+            <p>
+                Co je to číselná soustava? Číselná soustava je jasně daný způsob zápisu čísel (hodnot,
+                které reprezentují) pomocí číslic (symbolů).
+            </p>
+            <p>
+                Asi málokdo nikdy neslyšel v souvislosti s počítači o jedničkách a nulách. Proč
+                o nich ale v tomto kontextu mluvíme?
+            </p>
+
+            <p>
+                Jedničky a nuly jsou jedinými symboly binární (dvojkové) soustavy. A dnešní
+                počítače používají právě dvojkovou soustavu pro uchovávání a práci s daty, a
+                proto by ji každý, kdo se chce informatikou alespoň trochu zabývat, měl znát.
+            </p>
+
+            <p>
+                Předtím, než se podíváme na binární soustavu, si zopakujeme soustavu desítkovou,
+                tedy tu, kterou používáme dnes a denně. Pak se zaměříme na dvojkovou soustavu a ukážeme
+                si i soustavu šestnáctkovou, se kterou se také můžeme běžně setkat. Nakonec si
+                ukážeme, jak čísla napříč různými soustavami převádět.
+            </p>
+
+            <h2>Desítková (dekadická) soustava</h2>
+
+            <p>
+                Jak už název napovídá, desítková soustava pracuje s desíti symboly: 0, 1, 2, 3,
+                4, 5, 6, 7, 8 a 9. Jiné symboly v čísle zapsaném v desítkové soustavě nenajdeme.
+                Naše desítková soustava je tzv. <span class="term">poziční číselnou soustavou</span>. To znamená,
+                že hodnotu takto zapsaného čísla získáme z hodnoty jednotlivých číslic v závislosti
+                na jejich poloze – za každé posunutí cifry doleva její hodnotu násobíme desítkou.
+                Můžeš se na to dívat i tak, že pokud k číslu přičítáme jedničku, další cifru dostaneme
+                až poté, co se na stávající pozici vystřídá deset hodnot (od 0 po 9).
+            </p>
+
+            <p>
+                Počet hodnot, kterých v soustavě může nabývat jedna cifra, značí <span class="term">bázi</span>
+                číselné soustavy a typicky jí odpovídá i název (desítková soustava – deset
+                symbolů – báze 10).
+            </p>
+
+            <div class="notice">
+                <p>
+                    My si v této kapitole ukážeme několik používaných soustav, ale nikomu nic nebrání
+                    vytvořit si vlastní s libovolnou bází. Číslice jsou jen symboly, a jak později uvidíme,
+                    můžeme použít i písmena, a počet symbolů nám značí bázi. Zbytek funguje stejně ve všech
+                    (pozičních) soustavách.
+                </p>
+            </div>
+
+            <div class="example double">
+                <div>
+                    <ul>
+                        <li>42 – čtyři desítky a dvě jednotky</li>
+                        <li>24 – dvě desítky a čtyři jednotky</li>
+                        <li>512 – pět stovek, jedna desítka a dvě jednotky</li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>66 – šest desítek a šest jednotek</li>
+                        <li>10 – jedna desítka a žádné jednotky</li>
+                        <li>1024 – jeden tisíc, nula stovek, dvě desítky a čtyři jednotky</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Je dobré si uvědomit, že poziční soustavy nám přináší několik výhod, díky kterým
+                se nám s čísly lépe pracuje.
+            </p>
+
+            <p>
+                Jednou z výhod je snadné porovnávání dvou čísel. V tu chvíli nám stačí podívat
+                se, které z čísel má delší zápis, abychom věděli, které je vyšší. V případě,
+                že jsou obě stejně dlouhé nám stačí čísla porovnávat cifru po cifře, dokud
+                nenarazíme buď na konec (a v takovém případě jsou čísla stejná), nebo na cifru,
+                na které se čísla liší – v takovém případě je vyšší to číslo, které má na první
+                takové cifře číslici s vyšší hodnotou.
+            </p>
+            
+            <p>
+                Druhou výhodou, kterou poziční soustavy přinášejí, jsou techniky jako třeba
+                počítání s čísly pod sebou. Například při sčítání pod sebou vždy sčítáme spolu
+                jen ty cifry, které jsou na stejných pozicích a o ostatní pozice se nezajímáme
+                (musíme si samozřejmě pohlídat přenos do vyšších řádů), čímž sčítání dvou
+                libovolně velkých čísel umíme redukovat na sčítání dvou, respektive tří (i s
+                převodem) jednociferných čísel.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Možná je to překvapivé, ale ne všechny soustavy tak fungovaly. Vzpomeň si například
+                    na římské číslice, které jsi určitě viděl na základní škole. Číslo 2024 bychom v ní
+                    zapsali jako MMXXIV – všimni si, že znak M odpovídá tisíci nehledě na to, na
+                    které pozici se nachází (a to stejné platí i pro zbytek znaků).
+                </p>
+
+                <div class="example">
+                    <p>
+                        Schválně si zkus sečíst pod sebou dvě čísla v desítkové soustavě. Pak si zkus
+                        sečíst dvě čísla zapsané v Římské číselné soustavě, které je nepoziční.
+                    </p>
+                </div>
+
+                <p>
+                    Všechny soustavy, které si dnes ukážeme, jsou poziční.
+                </p>
+            </div>
+
+            <h3>Různé způsoby zápisu čísla</h3>
+            <p>
+                Podívejme se ještě na jeden trik, který s číselnými soustavami přímo nesouvisí, ale
+                u ostatních soustav nám přijde vhod, a tím jsou různé zápisy čísla. Ty nám usnadňují
+                práci s čísly, která by jinak byla nepohodlná (např. existuje takzvaná vědecká notace,
+                díky které můžeme úsporně zapsat velmi malá nebo naopak velmi velká čísla).
+            </p>
+
+            <p>
+                Nás teď bude zajímat zápis čísel, který si možná budeš pamatovat ze začátku základní
+                školy. Tak, jako jsme v příkladě výše rozepisovali číslo 42 jako čtyři desítky a dvě
+                jednotky, tak stejným způsobem zapíšeme jiná čísla s pomocí násobení čistě numericky:
+            </p>
+
+            <div class="example">
+                <p>
+                    452 = 4 · 100 + 5 · 10 + 2 · 1
+                </p>                
+                <p>
+                    1024 = 1 · 1000 + 0 · 100 + 2 · 10 + 4 · 1
+                </p>
+            </div>
+
+            <p>
+                Každé číslo v desítkové soustavě můžeme zapsat tímto způsobem. Pojďme
+                tento zápis lehce vylepšit a namísto tisíců, stovek či jednotek použijme mocniny báze:
+            </p>
+            
+            <div class="example">
+                <p>
+                    452 = 4 · 10<sup>2</sup> + 5 · 10<sup>1</sup> + 2 · 10<sup>0</sup>
+                </p>
+                <p>
+                    1024 = 1 · 10<sup>3</sup> + 0 · 10<sup>2</sup> + 2 · 10<sup>1</sup> + 4 · 10<sup>0</sup>
+                </p>
+            </div>
+
+            <p>
+                Pro lepší pochopení dalších soustav (a pak především při převodech mezi soustavami) se
+                nám tento způsob zápisu bude hodit.
+            </p>
+
+
+            <h2>Dvojková (binární) soustava</h2>
+
+            <p>
+                Stejně jako desítková i binární soustava je poziční. Na rozdíl od desítkové si
+                při zápisu čísel musíme vystačit s pouhými dvěma znaky. To znamená, že čísla
+                ve dvojkové soustavě budou mít zpravidla delší zápis než ty v desítkové, protože
+                tam, kde bychom v desítkové soustavě nahradili jedničku dvojkou, musíme v dvojkové
+                soustavě napsat nulu a zvýšit hodnotu v cifře o řád vyšší. Na stranu druhou, přesně
+                tato vlastnost je důvodem, proč v počítačích používáme binární soustavu – je zkrátka
+                jednodušší vytvořit paměťovou buňku, která umí nabývat pouze dvou stavů (0 a 1) než
+                desíti. Zvlášť když se počty takových buněk v dnešních počítačích pohybují v bilionech.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Zmíněným paměťovým buňkám v počítači říkáme bity. K těm se úzce vážou i bajty, které se
+                    z bitů skládají. Oběma jednotkám a paměti celkově se věnujeme
+                    <a href="bits-and-bytes.html">v samostatném textu</a>.
+                </p>
+            </div>
+
+            <div class="warn">
+                <p>
+                    V dalších částech textu se u čísel budeš moci setkat s dolním indexem. Ten budu
+                    používat pro explicitní určení báze (tj. soustavy), ve které je číslo zapsané.
+                </p>
+                <p>
+                    Například 2<sub>10</sub> je <q>naše</q> dvojka v desítkové soustavě, kdežto
+                    11<sub>2</sub> je trojka zapsaná ve dvojkové soustavě. V případě, že číslo žádný
+                    dolní index mít nebude, je zapsáno v desítkové soustavě, jak jsme zvyklí.
+                </p>
+            </div>
+
+            <p>
+                Podívejme se na prvních pár čísel z desítkové a dvojkové soustavy.
+            </p>
+
+            <div class="example triple">
+                <div>
+                    <ul>
+                        <li>0<sub>10</sub>  = 0<sub>2</sub></li>
+                        <li>1<sub>10</sub>  = 1<sub>2</sub></li>
+                        <li>2<sub>10</sub>  = 10<sub>2</sub></li>
+                        <li>3<sub>10</sub>  = 11<sub>2</sub></li>
+                        <li>4<sub>10</sub>  = 100<sub>2</sub></li>
+                        <li>5<sub>10</sub>  = 101<sub>2</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>6<sub>10</sub>  = 110<sub>2</sub></li>
+                        <li>7<sub>10</sub>  = 111<sub>2</sub></li>
+                        <li>8<sub>10</sub>  = 1000<sub>2</sub></li>
+                        <li>9<sub>10</sub>  = 1001<sub>2</sub></li>
+                        <li>10<sub>10</sub>  = 1010<sub>2</sub></li>
+                        <li>11<sub>10</sub>  = 1011<sub>2</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>12<sub>10</sub>  = 1100<sub>2</sub></li>
+                        <li>13<sub>10</sub>  = 1101<sub>2</sub></li>
+                        <li>14<sub>10</sub>  = 1110<sub>2</sub></li>
+                        <li>15<sub>10</sub>  = 1111<sub>2</sub></li>
+                        <li>16<sub>10</sub>  = 10000<sub>2</sub></li>
+                        <li>17<sub>10</sub>  = 10001<sub>2</sub></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Jak je vidět, na nule a jedničce žádný rozdíl nenajdeme. Už u dvojky ale vidíme
+                něco zajímavého. Zatímco v desítkové soustavě píšeme <q>2</q>, jak jsme zvyklí, ve
+                dvojkové soustavě další symbol nemáme a musíme tedy přejít do vyššího řádu. Stejná
+                situace nastává u čtyřky. Jak jsme si řekli, délka zápisu roste mnohem rychleji než
+                v případě desítkové soustavy.
+            </p>
+
+            <p>
+                Podívejme se na převod z dvojkové do desítkové soustavy. V předchozí části jsme si
+                ukázali zápis čísla v desítkové soustavě jako součet hodnot jednotlivých cifer
+                násobených mocninou báze. Zkusme použít stejný zápis i pro číslo ve dvojkové soustavě.
+            </p>
+
+            <div class="example">
+                <p>
+                    110<sub>2</sub> = 1 · 2<sup>2</sup> + 1 · 2<sup>1</sup> + 0 · 2<sup>0</sup>
+                </p>
+                <p>
+                    1001<sub>2</sub> = 1 · 2<sup>3</sup> + 0 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup>
+                </p>
+            </div>
+
+            <p>
+                Když si číslo zapíšeme takto, od získání jeho hodnoty v desítkové soustavě nás už dělí
+                pouze dopočítání odpovídajících součtů. V prvním případě tedy získáme číslo 6, v druhém
+                případě číslo 9 (v desítkové soustavě).
+            </p>
+
+            <div class="example">
+                <p>
+                    Převeď následující čísla z dvojkové do desítkové soustavy.
+                </p>
+                <div class="double">
+                    <div>
+                        <ul>
+                            <li>
+                            101<sub>2</sub> = 1 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 4 + 1 = 5
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>10<sub>2</sub> =</summary> 1 · 2<sup>1</sup> + 0 · 2<sup>0</sup> = 2
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>1001<sub>2</sub> =</summary> 1 · 2<sup>3</sup> + 0 + 0 + 1 · 2<sup>0</sup> = 9
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>11000<sub>2</sub> =</summary> 1 · 2<sup>4</sup> + 1 · 2<sup>3</sup> = 16 + 8 = 24
+                                </details>
+                            </li>
+                        </ul>
+                    </div><div>
+                        <ul>
+                            <li>
+                                <details>
+                                    <summary>1010<sub>2</sub> =</summary> 1 · 2<sup>3</sup> + 1 · 2<sup>1</sup> = 10
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>1110<sub>2</sub> =</summary> 1 · 2<sup>3</sup> + 1 · 2<sup>2</sup> + 1 · 2<sup>1</sup> = 14
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>1001<sub>2</sub> =</summary> 1 · 2<sup>3</sup> + 0 + 0 + 1 · 2<sup>0</sup> = 9
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary>11000<sub>2</sub> =</summary> 1 · 2<sup>4</sup> + 1 · 2<sup>3</sup> = 16 + 8 = 24
+                                </details>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="warn">
+                    <p>Výsledek získáš po kliknutí na daný příklad.</p>
+                </div>
+            </div>
+
+            <p>
+                Převodu druhým směrem (tj. z desítkové) se budeme věnovat v poslední kapitole.
+                Nejdřív se však krátce zastavíme u slíbené šestnáctkové soustavy, s tou se můžeme setkat
+                možná častěji než s dvojkovou.
+            </p>
+                
+            <h2>Šestnáctková (hexadecimální) soustava</h2>
+
+            <p>
+                Šestnáctková číselná soustava, jak již název napovídá, má šestnáct hodnot pro
+                jednu cifru: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E a F. Pokud bychom
+                v desítkové soustavě museli přenášet do vyššího řádu, tj. z 9 pokračovat na 10,
+                v šestnáctkové soustavě půjdeme z 9 na A. Hodnoty zapsané v šestnáctkové
+                soustavě tedy budou kratší (budou mít méně cifer) než jejich zápis v desítkové a
+                především ve dvojkové soustavě. To je ostatně také jeden z hlavních důvodů, proč
+                šestnáctkovou soustavu používáme.
+            </p>
+
+            <div class="example triple">
+                <div>
+                    <ul>
+                        <li>0<sub>10</sub> = 0<sub>16</sub></li>
+                        <li>1<sub>10</sub> = 1<sub>16</sub></li>
+                        <li>2<sub>10</sub> = 2<sub>16</sub></li>
+                        <li>3<sub>10</sub> = 3<sub>16</sub></li>
+                        <li>4<sub>10</sub> = 4<sub>16</sub></li>
+                        <li>5<sub>10</sub> = 5<sub>16</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>6<sub>10</sub> = 6<sub>16</sub></li>
+                        <li>7<sub>10</sub> = 7<sub>16</sub></li>
+                        <li>8<sub>10</sub> = 8<sub>16</sub></li>
+                        <li>9<sub>10</sub> = 9<sub>16</sub></li>
+                        <li>10<sub>10</sub> = A<sub>16</sub></li>
+                        <li>11<sub>10</sub> = B<sub>16</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>12<sub>10</sub> = C<sub>16</sub></li>
+                        <li>13<sub>10</sub> = D<sub>16</sub></li>
+                        <li>14<sub>10</sub> = E<sub>16</sub></li>
+                        <li>15<sub>10</sub> = F<sub>16</sub></li>
+                        <li>16<sub>10</sub> = 10<sub>16</sub></li>
+                        <li>17<sub>10</sub> = 11<sub>16</sub></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Převod do desítkové soustavy funguje stejně jako v případě dvojkové,
+                opět si rozepíšeme převáděné číslo tak, abychom viděli bázi explicitně a hodnoty
+                jednotlivých cifer sečteme.
+            </p>
+
+            <div class="example">
+                <p>
+                    1F<sub>16</sub> = 1 · 16<sup>1</sup> + 15 · 16<sup>0</sup> = 31<sub>10</sub>
+                </p>
+
+                <p>
+                    C4<sub>16</sub> = 12 · 16<sup>1</sup> + 4 · 16<sup>0</sup> = 196<sub>10</sub>
+                </p>
+
+                <div class="notice">
+                    <p>
+                        Všimni si, že v případě šestnáctkových číslic násobíme mocninu báze jejich hodnotou v desítkové soustavě
+                        (např. místo C píšeme 12). Doposud jsme tento převod explicitně dělat nemuseli, protože nula i jednička
+                        ve dvojkové soustavě odpovídá nule a jedničce v desítkové.
+                    </p>
+                </div>
+
+                <p>Zkus si následující převody sám.</p>
+
+                <details>
+                    <summary>1209<sub>16</sub> =</summary> 1 · 16<sup>3</sup> + 2 · 16<sup>2</sup> + 9 · 16<sup>0</sup> = 1 · 4096 + 2 · 256 + 9 = 4361<sub>10</sub>
+                </details>
+                
+                <details>
+                    <summary>ABBA<sub>16</sub> =</summary> 10 · 16<sup>3</sup> + 11 · 16<sup>2</sup> + 11 · 16<sup>1</sup> + 10 · 16<sup>0</sup> = 43962<sub>10</sub>
+                </details>
+
+                <details>
+                    <summary>CAF3<sub>16</sub> =</summary> 12 · 16<sup>3</sup> + 10 · 16<sup>2</sup> + 15 · 16<sup>1</sup> + 3 · 16<sup>0</sup> = 51955<sub>10</sub>
+                </details>
+            </div>
+
+            <p>
+                Šestnáctkovou soustavu ale zpravidla nepoužíváme místo desítkové soustavy, ale většinou místo dvojkové.
+                Díky tomu, že šestnáct je mocninou dvojky (2<sup>4</sup>), zachovává si šestnáctková soustava vlastnosti
+                dvojkové s výhodou kratšího zápisu – pro vyjádření čtyř cifer ve dvojkové soustavě nám stačí právě jeden
+                znak v šestnáctkové soustavě.
+            </p>
+
+            <div class="example triple">
+                <div>
+                    <ul>
+                        <li>0<sub>2</sub> = 0<sub>16</sub></li>
+                        <li>1<sub>2</sub> = 1<sub>16</sub></li>
+                        <li>10<sub>2</sub> = 2<sub>16</sub></li>
+                        <li>11<sub>2</sub> = 3<sub>16</sub></li>
+                        <li>100<sub>2</sub> = 4<sub>16</sub></li>
+                        <li>101<sub>2</sub> = 5<sub>16</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>110<sub>2</sub> = 6<sub>16</sub></li>
+                        <li>111<sub>2</sub> = 7<sub>16</sub></li>
+                        <li>1000<sub>2</sub> = 8<sub>16</sub></li>
+                        <li>1001<sub>2</sub> = 9<sub>16</sub></li>
+                        <li>1010<sub>2</sub> = A<sub>16</sub></li>
+                        <li>1011<sub>2</sub> = B<sub>16</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>1100<sub>2</sub> = C<sub>16</sub></li>
+                        <li>1101<sub>2</sub> = D<sub>16</sub></li>
+                        <li>1110<sub>2</sub> = E<sub>16</sub></li>
+                        <li>1111<sub>2</sub> = F<sub>16</sub></li>
+                        <li>10000<sub>2</sub> = 10<sub>16</sub></li>
+                        <li>10001<sub>2</sub> = 11<sub>16</sub></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Díky této vlastnosti jsou i převody mezi těmito dvěma soustavami přímočaré. Pro převod z dvojkové
+                soustavy do šestnáctkové nám stačí každé čtyři cifry dvojkové přepsat na jedinou šestnáctkovou. Jediné,
+                na co si musíme dát pozor, je, aby číslo, které převádíme mělo délku dělitelnou čtyřmi, jinak musíme
+                na začátek doplnit příslušný počet nul (stejně jako bychom z 12<sub>10</sub> udělali čtyřciferné číslo
+                doplněním nul 0012<sub>10</sub>). Alternativně můžeme převod začít od nejnížších cifer, takže nakonec ve
+                vyšších řádech skončíme s méně než čtyřmi ciframi a nuly doplníme až během převodu.
+            </p>
+
+            <div class="example double">
+                <div>
+                    <ul>
+                        <li>11<sub>2</sub> = 0011<sub>2</sub> = 3<sub>16</sub></li>
+                        <li>1010<sub>2</sub> = A<sub>16</sub></li>
+                        <li>1111<sub>2</sub> = F<sub>16</sub></li>
+                    </ul>
+                </div><div>
+                    <ul>
+                        <li>11111111<sub>2</sub> = 1111 1111<sub>2</sub> = FF<sub>16</sub></li>
+                        <li>00011111<sub>2</sub> = 0001 1111<sub>2</sub> = 1F<sub>16</sub></li>
+                        <li>10000001<sub>2</sub> = 1000 0001<sub>2</sub> = 81<sub>16</sub></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                Převody opačným směrem pak fungují úplně stejně. Každou šestnáctkovou cifru nahradíme
+                čtyřmi ciframi ve dvojkové soustavě.
+            </p>
+
+            <div class="example double">
+                <div>
+                    <ul>
+                        <li>A<sub>16</sub> = 1010<sub>2</sub></li>
+                        <li>1F<sub>16</sub> = 1 F<sub>16</sub> = 0001 1111<sub>2</sub></li>
+                        <li>E0<sub>16</sub> = E 0<sub>16</sub> = 1110 0000<sub>2</sub></li>
+                    </ul>
+                </div><div>
+                   <ul>
+                        <li>1209<sub>16</sub> = 0001 0010 0000 1001<sub>2</sub></li>
+                        <li>ABBA<sub>16</sub> = 1010 1011 1011 1010<sub>2</sub></li>
+                        <li>CAF3<sub>16</sub> = 1100 1010 1111 0011<sub>2</sub></li>
+                   </ul> 
+                </div>
+            </div>
+
+            <p>
+                Díky svým vlastnostem našla šestnáctková soustava své využití tam, kde chceme
+                kombinovat výhody binární soustavy (korespondence s paměťovými buňkami) s výhodou
+                kratšího zápisu.
+            </p>
+
+            <p>
+                Jednou z oblastí, kde se s šestnáctkovou soustavou můžes setkat, je práce s barvami.
+                Pokud vytváříš web, pracuješ s photoshopem nebo si chceš jen sám zvolit přesnou barvu
+                v nějakém kancelářském balíku, většinou můžeš barvu zadat v RGB (Red-Green-Blue) formátu,
+                kdy intenzitu každé barvy vyjadřujeme dvěma číslicemi šestnáctkové soustavy. Čím vyšší
+                hodnota složky, tím vyšší intenzita barvy.
+            </p>
+
+            <div class="example">
+                <div class="example triple">
+                    <figure>
+                        <img src="numerals/colors1.svg" alt="" >
+                        <figcaption>Přítomnost všech složek nám dá jasně bílou barvu</figcaption>
+                    </figure><figure>
+                        <img src="numerals/colors2.svg" alt="" >
+                        <figcaption>Růžovou až fialovou dostaneme zeslabením zelené složky</figcaption>
+                    </figure><figure>
+                        <img src="numerals/colors3.svg" alt="" >
+                        <figcaption>Zelenou až khaki získáme kombinací červené a zelené</figcaption>
+                    </figure>
+                </div>
+
+                <div class="notice">
+                    <p>
+                        Kdybychom chtěli druhou barvu (ff78ff) zapsat v binární soustavě, potřebovali bychom
+                        následujících dvacet čtyři cifer: 11111111 01111000 11111111.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                Další využití šestnáctkové soustavy můžeme najít v oblasti sítí, kde se dlouho
+                používá pro tzv. MAC adresy. V dnešním internetu se pomalu ale jistě prosazuje IP
+                protokol ve své šesté verzi (podrobněji se sítím budeme věnovat
+                <a href="networks.html">v samostatném textu</a>), jenž pro jednu IP adresu používá 128
+                bitů (16 bajtů). Kdybychom si chtěli takovou adresu zapisovat binárně nebo třeba (po
+                jednotlivých bajtech) dekadicky, byl by takový zápis poměrně dlouhý. Místo toho se IPv6
+                adresa zapisuje šestnáctkově po dvou bajtech (např. fe80:abcd:1111:1111:cafe:00bc:0000:0001).
+            </p>
+
+            <div class="notice">
+                <p>
+                    Můžeš se s ní potkat i při programování. Například zápis adres jednotlivých paměťových
+                    buněk v počítači bývá realizován v šestnáctkové soustavě.
+                </p>
+            </div>
+
+            <h2>Převody mezi soustavami</h2>
+
+            <p>
+                Teď, když už známe několik číselných soustav, se podíváme na převody nejen mezi nimi,
+                ale mezi jakýmikoliv číselnými soustavami navzájem.
+                U soustav, kde je jeden základ násobkem druhého je práce poměrně jednoduchá,
+                protože můžeme pracovat s jednotlivými ciframi / skupinami cifer tak, jak jsme
+                si to už ukázali v případě šestnáctkové s dvojkovou. 
+            </p>
+
+            <p>
+                Pro soustavy, kde si báze takto pěkně neodpovídají si ukážeme možná trošku
+                složitější, zato ovšem univerzální způsob.
+            </p>
+            <p>
+                Budeme potřebovat funkci s poněkud tajemným názvem – modulo. Funkce samotná ale nijak
+                složitá není, ve skutečnosti se jedná o zbytek po dělení. Značit ji budeme
+                <span class="term">mod</span>.
+            </p>
+
+            <div class="example">
+                <p>Ukážeme si pár příkladu vyhodnocení funkce modulo.</p>
+                <ul>
+                    <li>13 mod 5 = 3 (tj. zbytek po dělení třinácti pětkou je tři)</li>
+                    <li>28 mod 5 = 3 (zbytek po dělení dvaceti osmi pětkou je zase tři)</li>
+                    <li>8 mod 2 = 0 (zbytek po dělení osmi dvojkou je nula)</li>
+                    <li>42 mod 50 = 42 (zbytek po dělení čtyřiceti dvou padesátkou je čtyřicet dva)</li>
+                </ul>
+            </div>
+
+            <p>
+                V informatice ji používáme vcelku často, a proto je dobré vědět, co se pod tímto
+                názvem skrývá.
+            </p>
+
+            <p>
+                S funkcí modulo a klasickým dělením se můžeme pustit do převodu napříč
+                soustavami.
+            </p>
+            <p>
+                Převod se skládá ze dvou částí. V první části převedeme dané číslo do desítkové soustavy.
+                To už umíme – číslo si rozepíšeme s explicitní bází, každou cifru spočítáme zvlášť a
+                mezivýsledky sečteme.
+            </p>
+            <p>
+                V druhé fázi máme číslo v desítkové soustavě, které chceme převést do jiné. Abychom jej
+                převedli, začneme číslo postupně dělit novou bází, dokud se nedostaneme na nulu, přičemž
+                si v průběhu dělení zapisujeme mezivýsledky funkce modulo (tj. zbytky po dělení). Jakmile
+                dosáhneme nuly, máme hotovo, přičemž jsou to právě zapsané mezivýsledky, které popisují,
+                jak bude číslo v nové bázi vypadat – stačí jejich pořadí otočit tak, aby poslední zbytek
+                po dělení byl na nejvyšší (nejlevější) cifře a první zbytek po dělení na nejnižší (čili
+                na místě jednotek).
+            </p>
+
+            <p>
+                Proč musíme mezivýsledky nakonec otočit? Je potřeba si uvědomit, co postupnou
+                aplikací dělení získáváme. Podívejme se spolu na převod čísla 132 z desítkové
+                soustavy do desítkové (ano, opravdu) soustavy, půjde to pěkně vidět.
+            </p>
+
+            <div class="example">
+                <p>
+                    <span class="term">fáze 1</span>: dostáváme 132<sub>10</sub> = 1 · 10<sup>2</sup> + 3 · 10<sup>1</sup>
+                    + 2 · <sup>0</sup> = 132<sub>10</sub>.
+                </p>
+
+                <p>
+                    <span class="term">fáze 2</span>: začínáme postupně dělit číslo deseti, protože převádíme do desítkové
+                    soustavy, a zapisovat zbytky. Celý proces si zapíšeme do tří sloupců – v prvním máme aktuální
+                    hodnotu, kterou převádíme, v druhém je výsledek dělení desíti a ve třetím výsledek funkce
+                    modulo deseti. Dokud není výsledkem dělení nula, tak výsledek opíšeme do prvního sloupečku
+                    následujícího řádku.
+                </p>
+                <table>
+                    <thead>
+                    <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>132</td><td>13</td><td>2</td></tr>
+                    <tr><td>13</td><td>1</td><td>3</td></tr>
+                    <tr><td>1</td><td>0</td><td>1</td></tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    Zbytky, které jsme zapsali, jsou 2, 3, a 1. Když je otočíme, získáme 132.
+                </p>
+            </div>
+
+            <p>
+                Všimni si, že ve sloupečku výsledků modulo máme postupně hodnoty jednotek, desítek
+                a stovek původního čísla. Můžeš se na to dívat i tak, že opakovaným dělením se
+                posouváme po cifrách čísla doleva, zatímco modulem <q>čteme</q> hodnotu aktuální
+                cifry. Pak cifra, kterou přečteme jako poslední, musí odpovídat hodnotě nejvyšší
+                cifry, a proto je třeba ono otočení.
+            </p>
+
+            <p>
+                Zkusme si teď pomocí stejného postupu převést čísla 12<sub>10</sub> a 13<sub>10</sub>
+                do binární soustavy. 
+            </p>
+
+            <div class="example">
+                <p>
+                    Jelikož obě čísla už máme v desítkové soustavě, můžeme fázi jedna
+                    přeskočit. Ve fázi dva si zase vytvoříme tři sloupce jako v přechozím příkladě,
+                    tentokrát však nebudeme dělit a zapisovat zbytky po dělení 10, ale po dělení 2
+                    (protože převádíme do dvojkové soustavy, je bází číslo 2).
+                </p>
+
+                <div class="double">
+                    <div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>12</td><td>6</td><td>0</td></tr>
+                                <tr><td>6</td><td>3</td><td>0</td></tr>
+                                <tr><td>3</td><td>1</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div><div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>13</td><td>6</td><td>1</td></tr>
+                                <tr><td>6</td><td>3</td><td>0</td></tr>
+                                <tr><td>3</td><td>1</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p>
+                    Získáváme tedy 12<sub>10</sub> = 1100<sub>2</sub> a 13<sub>10</sub> = 1101<sub>2</sub>
+                    a převodem zpátky z dvojkové do desítkové si můžeme snadno ověřit, že jsou to správné výsledky:
+                </p>
+                <p>1100<sub>2</sub> = 1 · 2<sup>3</sup> + 1 · <sup>2</sup> + 0 · 2<sup>1</sup> + 0 · 2<sup>0</sup> = 12<sub>10</sub></p>
+                <p>1101<sub>2</sub> = 1 · 2<sup>3</sup> + 1 · <sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 13<sub>10</sub></p>
+            </div>
+
+            Stejným způsobem můžeme převádět mezi libovolnými dvěma soustavami. Následuje pár příkladů, na kterých
+            si můžeš vyzkoušet, jestli látce rozumíš. Rozhodně doporučuji podívat se do záložky procvičování tady
+            na webu, kde najdeš příkladů mnohem více.
+
+            <div class="example">
+                <details>
+                    <summary>
+                        Převeď 163<sub>10</sub> do dvojkové soustavy a 4305<sub>10</sub> do šestnáctkové soustavy.
+                        Výsledky se ti opět ukáží po kliknutí.
+                    </summary>
+                    <div class="double">
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>163</td><td>81</td><td>1</td></tr>
+                                    <tr><td>81</td><td>40</td><td>1</td></tr>
+                                    <tr><td>40</td><td>20</td><td>0</td></tr>
+                                    <tr><td>20</td><td>10</td><td>0</td></tr>
+                                    <tr><td>10</td><td>5</td><td>0</td></tr>
+                                    <tr><td>5</td><td>2</td><td>1</td></tr>
+                                    <tr><td>2</td><td>1</td><td>0</td></tr>
+                                    <tr><td>1</td><td>0</td><td>1</td></tr>
+                                </tbody>
+                            </table>
+                        </div><div>
+                            <table>
+                                <caption>
+                                    Pozn.: hodnoty ve sloupci modulo musíme převést na odpovídající cifry výsledné soustavy
+                                </caption>
+                                <thead>
+                                    <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>65201</td><td>4075</td><td>1</td></tr>
+                                    <tr><td>4075</td><td>254</td><td>B (= 11)</td></tr>
+                                    <tr><td>254</td><td>15</td><td>E (=14)</td></tr>
+                                    <tr><td>15</td><td>0</td><td>F (=15)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p>
+                        Dostáváme 163<sub>10</sub> = 10100011<sub>2</sub> a 4305<sub>10</sub> = FEB1<sub>16</sub>
+                    </p>
+                </details>
+            </div>
+
+            <div class="example">
+                <details>
+                    <summary>
+                        Převeď BAF<sub>16</sub> do dvojkové soustavy.
+                    </summary>
+                    
+                    <p>
+                        Nejprve číslo převedeme univerzálním způsobem převodem se dvěmi fázemi.
+                    </p>
+
+                    <p>
+                        <span class="term">fáze 1</span>: BAF<sub>16</sub> = 11 · 16<sup>2</sup> + 10 · 16<sup>1</sup> + 15 · 16<sup>0</sup> = 2816 + 160 + 15 = 2991
+                    </p>
+
+                    <p>
+                        <span class="term">fáze 2</span>: Číslo jsme převedli do desítkové, teď jej můžeme převést do dvojkové.
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>2991</td><td>1495</td><td>1</td></tr>
+                            <tr><td>1495</td><td>747</td><td>1</td></tr>
+                            <tr><td>747</td><td>373</td><td>1</td></tr>
+                            <tr><td>373</td><td>186</td><td>1</td></tr>
+                            <tr><td>186</td><td>93</td><td>0</td></tr>
+                            <tr><td>93</td><td>46</td><td>1</td></tr>
+                            <tr><td>46</td><td>23</td><td>0</td></tr>
+                            <tr><td>23</td><td>11</td><td>1</td></tr>
+                            <tr><td>11</td><td>5</td><td>1</td></tr>
+                            <tr><td>5</td><td>2</td><td>1</td></tr>
+                            <tr><td>2</td><td>1</td><td>0</td></tr>
+                            <tr><td>1</td><td>0</td><td>1</td></tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        Dostáváme BAF<sub>16</sub> = 1011 1010 1111<sub>2</sub>. Zkoušku ponecháme na čtenáři a podíváme se, jak bychom číslo mohli
+                        převést z šestnáctkové soustavy do dvojkové napřímo.
+                    </p>
+
+                    <p>
+                        Pro převod si musíme uvědomit, že jedna cifra šestnáctkové soustavy obsáhne přesně čtyři cifry dvojkové. Můžeme proto jít po
+                        jednotlivých cifrách a každou z nich nahradit odpovídající čtyřcifernou hodnotou v dvojkové soustavě.
+                    </p>
+                    <p>
+                        BAF<sub>16</sub> = B A F<sub>16</sub> = 1011 1010 1111<sub>2</sub>
+                    </p>
+                </details>
+            </div>
+
+
+            <div class="summary">
+                <h3>Shrnutí</h3>
+                <ul>
+                    <li>číselná soustava, kterou dnes a denně používáme se nazývá desítková (dekadická)</li>
+                    <li>počítače jsou založené na dvojkové (binární) soustavě, jedinými číslicemi jsou 0 a 1</li>
+                    <li>v informatice se často můžeme setkat s šestnáctkovou (hexadecimální) soustavou, která k desíti číslicím desítkové
+                        soustavy přidává šest dalších: A, B, C, D, E, F</li>
+                    <li>v principu nám nic nebrání vytvořit si vlastní číselnou soustavu, potřebujeme jen určit pořadí cifer</li>
+                    <li>ukázali jsme si funkci modulo a řekli si, že jde vlastně o zbytek po dělení</li>
+                    <li>naučili jsme se jak lze mezi libovolnými dvěma číselnými soustavami převádět: vstupní číslo převedeme do desítkové
+                        soustavy (fáze 1) z ní pak do výstupní soustavy (fáze 2)</li>
+                </ul>
+            </div>
+
+            <div class="quickcheck">
+                <p>Na konci této kapitoly bys měl být schopen:</p>
+
+                <ul>
+                    <li>vysvětlit pojem číselné soustavy</li>
+                    <li>intuitivně chápat rozdíl mezi hodnotou a znakem pro hodnotu: 3<sub>10</sub> = 11<sub>2</sub> = 3<sub>16</sub></li>
+                    <li>umět vysvětlit co je to modulo</li>
+                    <li>převádět malá čísla mezi dvojkovou, desítkovou a šestnáctkovou soustavou</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

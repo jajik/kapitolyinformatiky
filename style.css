@@ -1,0 +1,374 @@
+:root {
+    --color-body: white;
+    --color-content: #f5f5dc;
+    --color-header: #2f8d2f;
+    --color-footer: #2f8d2f;
+    --color-menu: #d5d5bc;
+    --color-menu-border: #0f6d0f;
+    --color-notice: #80C080;
+    --color-example: #8A8AF0;
+    --color-warn: #F07070;
+    --color-code: #C0C0C0;
+    --color-summary: #F0F070;
+    --color-quickcheck: #D06AD0;
+    --color-table-border: black;
+    --color-position-border: black;
+    --color-selection: #fafafa;
+    --color-selection-background: #55da55;
+    --color-link: #005d00;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 12% 44% 1fr;
+    grid-template-rows: auto auto auto;
+    font-size: 1.1em;
+    background-color: var(--color-body);
+}
+
+a {
+    color: var(--color-link);
+}
+
+.notice > * a {
+    color: black;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    text-decoration: underline;
+}
+
+h3, h4, h5 {
+    text-decoration: underline;
+}
+
+header {
+    background-color: var(--color-header);
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 1;
+    margin: 1%;
+    font-size: 2em;
+    text-align: center;
+}
+
+footer {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 3;
+    background-color: var(--color-footer);
+    margin: 1%;
+    font-size: 1em;
+    text-align: center;
+}
+
+::selection {
+    color: var(--color-selection);
+    background-color: var(--color-selection-background);
+}
+
+summary {
+    display: inline;
+}
+
+ul {
+    margin-bottom: 0.5em;
+}
+
+#menu ul {
+    list-style: none; /* removes dots in menu */
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#menu {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    background-color: var(--color-menu);
+    height: fit-content;
+}
+
+#menu ul li a {
+    font-size: 1.2em;
+    text-decoration: none;
+    display: block;
+    padding: 1em 1em 1em 3em;
+    border-bottom: 1px solid var(--color-menu-border);
+}
+
+#content {
+    display: grid;
+    grid-column: 3;
+    grid-row: 2;
+    background-color: var(--color-content);
+    min-height: 30em;
+    padding: 0em 1em 1em 1em;
+    margin-left: 1em;
+}
+
+label, #mytoggle {
+    display: none
+}
+
+pre {
+    overflow: auto;
+    font-family: monospace;
+}
+
+code {
+    padding: 0 0.3em;
+}
+
+.example, .notice, .code, .warn, .summary, .quickcheck {
+    padding: 1em 2em;
+    border-radius: 20px;
+    margin: 0.5em 1em;
+}
+
+.notice {
+    background-color: var(--color-notice);
+}
+
+.code, code {
+    background-color: var(--color-code);
+}
+
+.example {
+    background-color: var(--color-example);
+}
+
+.warn {
+    background-color: var(--color-warn);
+}
+
+.summary {
+    background-color: var(--color-summary);
+}
+
+.quickcheck {
+    background-color: var(--color-quickcheck);
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+th, td {
+    padding: 0em 1em;
+}
+
+th:not(:last-of-type), td:not(:last-of-type), th:has(+ td) {
+    border-right: 1px solid var(--color-table-border);
+}
+
+td.left {
+    text-align: left;
+}
+
+.double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.triple {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.triple > :first-child, div.triple > :nth-child(2), div.double > :first-child {
+    border-right: 1px dashed black;
+}
+
+/* kudos to https://stackoverflow.com/questions/63666463/table-width-100-with-overflow-scroll */
+div.wrapper {
+    overflow: auto;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+caption {
+    caption-side: bottom;
+    font-style: italic;
+    padding-top: 0.5em;
+}
+
+img {
+    max-width: 100%;
+}
+
+figcaption {
+    padding: 1%;
+    font-style: italic;
+    margin: 0em 1em;
+}
+
+figure {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0;
+}
+
+
+span.term {
+    font-weight: bold;
+}
+
+span.trans {
+    font-style: italic;
+}
+
+details {
+    margin-bottom: 0.5em;
+}
+
+ul.plan > li {
+    font-weight: bold;
+}
+
+ul.plan > li > * {
+    font-weight: normal;
+}
+
+/* another layouts */
+
+@media screen and (max-width: 120em) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 18% 58% 1fr;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+@media screen and (max-width: 90em) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 22% 74% 1fr;
+        grid-template-rows: auto auto auto;
+    }
+}
+
+/* mobile layout */
+
+@media screen and (max-width: 64em) {
+    body {
+        grid-template-columns: 1% 98% 1%;
+        grid-template-rows: auto auto auto;
+    }
+
+    header #logo {
+        max-width: 80%;
+        margin-left: 2em;
+    }
+
+    header {
+        grid-column: 1 / 4;
+        margin: 0;
+    }
+
+    footer {
+        grid-column: 1 / 4;
+        margin: 0;
+    }
+
+    #menu {
+        display: none;
+        margin: 0;
+        height: 100%;
+    }
+
+    label {
+        display: grid;
+        grid-column: 2;
+        grid-row: 1;
+        height: 3em;
+        width: 3em;
+        margin-left: 1em;
+        align-self: center;
+        background-image: url("images/menu.svg");
+        background-size: 100%;
+    }
+
+    label:has(+ #mytoggle:checked) {
+        background-image: url("images/close.svg");
+    }
+
+    #mytoggle:checked ~ #menu {
+        grid-column: 1 / 4;
+        display: block;
+        z-index: 2;
+    }
+
+    #content {
+        grid-column: 2;
+        margin-left: 0em;
+    }
+
+    .example, .notice, .code, .warn, .summary, .quickcheck {
+        margin: 0.5em 0;
+        padding: 0.5em 1em;
+    }
+
+    figcaption {
+        margin-bottom: 0.5em;
+    }
+
+    .double, .triple {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    div.triple > :first-child, div.triple > :nth-child(2), div.double > :first-child {
+        border-right: none;
+        border-bottom: 2px solid black;
+        margin-bottom: 1em;
+    }
+
+    table {
+        margin: 0.2em 0;
+    }
+
+}
+
+@media print {
+
+    #menu, footer, header {
+        display: none;
+    }
+
+    body {
+        grid-template-columns: 1% 98% 1%;
+        grid-template-rows: auto auto auto;
+        print-color-adjust: exact;
+        display: block;
+    }
+
+    .example, .notice, .code, .warn, .summary, .quickcheck {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    h1, h2, h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    #content {
+        grid-column: 1 / 3;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        display: grid;
+    }
+}

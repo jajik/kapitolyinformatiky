@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/about.html" >
+
+    <link rel="manifest" href="manifest.json" >
+    <link rel="icon" href="favicon.ico" >
+    <link rel="icon" type="image/png" href="images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img id="logo" src="images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="about.html">O webu</a></li>
+                <li><a href="chapters/index.html">Kapitoly</a></li>
+                <li><a href="exercises/index.html">Procvičování</a></li>
+                <li><a href="teachers/index.html">Pro učitele</a></li>
+                <li><a href="term-index.html">Rejstřík</a></li>
+                <li><a href="external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Vybrané kapitoly z informatiky pro střední školy</h1>
+
+            <p>
+                Tento web vznikl v rámci diplomové práce na Fakultě informatiky Masarykovy
+                univerzity v Brně. Cílem je studentům středních škol a gymnázií nabídnout
+                pokud možno přístupné studijní materiály k různým tématům informatiky.
+            </p>
+
+            <p>
+                Všechny materiály na webu jsou dostupné pod svobodnou licencí CC BY-NC-SA,
+                lze je tedy nekomerčně využívat, upravovat a dále volně sdílet pod stejnou
+                licencí. Pokud by vám tato licence nevyhovovala, můžete se ozvat na uvedený
+                e-mail.
+            </p>
+
+            <p>
+                Zároveň lze na web přispět tvorbou
+                dalších materiálů – všechny zdrojové kódy jsou dostupné ve veřejném repozitáři
+                na <a href="https://github.com/jajik/kapitolyinformatiky">GitHubu</a>. Podrobnosti
+                o možnostech zapojení se jsou popsány níže, znalost gitu není podmínkou.
+            </p>
+
+            <h2>Jak se zapojit?</h2>
+
+            <p>
+                Zdrojové kódy celého webu jsou veřejně na GitHubu, odkud jsou následně
+                staženy a publikovány. Při tvorbě nové kapitoly stačí vytvořit kopii
+                souboru <code>template.html</code> v adresáři <code>chapters</code> s názvem
+                příslušné kapitoly a doplnit ji o odpovídající obsah. Každá kapitola by měla
+                být zakončena blokem Shrnutí a rámečkem, kde si žáci mohou ověřit své nově nabyté
+                vědomosti.
+            </p>
+
+            <p>
+                Jednou možností přispění je otevřít tzv. pull request s novou kapitolou
+                přímo k repozitáři na GitHubu. Tato akce vyžaduje bezplatný účet na GitHubu.
+            </p>
+
+            <p>
+                Pokud neumíte s gitem nebo html, je možné místo pull requestu otevřít issue
+                s textem (a příp. dalšími přílohami), o který byste chtěli web obohatit. Někdo
+                se issue ujme a na web ji případně doplní. Issue můžete otevřít i v případě,
+                že vám nějaké téma chybí, ale nechcete ho z různých důvodů zpracovat sami.
+            </p>
+
+            <p>
+                Pokud si nechcete vytvářet účet na GitHubu, je možné materiály zaslat
+                na e-mailovou adresu kapitolyinformatiky@chlup.net. Na stejnou adresu můžete
+                posílat i tipy a zpětnou vazbu.
+            </p>
+
+            <p>
+                Pokud najdete chybu, prosím, využijte jeden z předchozích způsobů a dejte nám vědět.
+            </p>
+
+            <div class="warn">
+                <p>
+                    Přispíváním na web souhlasíte se zveřejněním materiálů pod jeho licencí a
+                    zároveň stvrzujete, že jste autorem příspěvku.
+                </p>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

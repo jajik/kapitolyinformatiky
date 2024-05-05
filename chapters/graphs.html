@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Grafy | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/chapters/graphs.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+
+            <h1>Grafy</h1>
+
+            <p>
+                V této kapitole se zaměříme na něco, čemu v informatice říkáme graf. Disciplíně, která se grafům
+                věnuje, říkáme Teorie grafů a jako téma je velice bohatá. My se zaměříme jen na naprosté základy,
+                abychom pochopili koncept. V praxi mají totiž grafy až nečekaně široké využití, s jejich aplikací
+                se můžeš setkat v počítačových sítích, v navigaci, v plánování vodovodních potrubí, v biologii
+                a chemii, ale třeba i sociologii.
+            </p>
+
+            <p>
+                Co si představíš pod pojmem <q>graf</q>? Spousta lidí si představí sloupcové
+                grafy používané třeba v reklamách, kdy se nás výrobci snaží přesvědčit, abychom
+                si koupili novou a mnohem lepší verzi výrobku. Nebo koláčové grafy, se kterými se
+                můžeme setkat například v průzkumech veřejného mínění. Tyto typy grafů můžeme
+                označit jako statistické.
+            </p>
+
+            <p>
+                Jiní si při pojmu graf představí graf nějaké matematické funkce, tedy nějakou křivku
+                v závislosti na typu funkce – např. přímka pro lineární funkci nebo parabola
+                pro kvadratickou.
+            </p>
+
+            <div class="example double">
+                <figure>
+                    <figcaption>Koláčový (kruhový) graf</figcaption>
+                    <img src="graphs/graph-circle.svg" alt="" />
+                </figure><figure>
+                    <figcaption>Graf lineární a kvadratické funkce</figcaption>
+                    <img src="graphs/graph-function.svg" alt="" />
+                </figure>
+            </div>
+
+            <p>
+                V informatice grafy myslíme něco úplně jiného – zjednodušeně řečeno kolečka a čárky.
+                V principu jednoduchý koncept, který má až překvapivě mnoho praktických aplikací.
+            </p>
+
+            <h2>Graf – vrcholy a hrany</h2>
+
+            <p>
+                V informatice se <span class="term">graf</span> skládá z množiny vrcholů (koleček) a hran (čárek).
+                Hrany spojují vrcholy mezi sebou, ale v grafu můžeme mít i vrcholy, ke kterým žádná hrana
+                nenáleží. Množinu vrcholů značíme zpravidla V (z anglického vertex/vertices), množinu
+                hran E (z anglického edge(s)). Počet uzlů grafu odpovídá velikosti množiny V. Celý
+                graf popisuje dvojice (V, E).
+            </p>
+
+            <div class="example">
+                <p>
+                    Následuje několik příkladu grafů, které mají stejné vrcholy (V = {A, B, C, D, E}),
+                    ale liší se hranami – odpovídající množinu hran popisující daný graf najdeš pod
+                    každým obrázkem.
+                </p>
+                <div class="triple">
+                    <figure>
+                        <figcaption>Graf A bez hran mezi vrcholy</figcaption>
+                        <img src="graphs/graph1.svg" alt="Graf bez hran" />
+                    </figure><figure>
+                        <figcaption>Graf B s pěti hranami</figcaption>
+                        <img src="graphs/graph2.svg" alt="Graf s hranami AB, AC, AE, CD, CE" />
+                    </figure><figure>
+                        <figcaption>Graf C se čtyřmi hranami</figcaption>
+                        <img src="graphs/graph3.svg" alt="Graf s hranami AC, AE, CE, BD" />
+                    </figure>
+                </div>
+
+                <div class="warn">
+                    <p>
+                        V tomto textu značíme hranu mezi dvěma vrcholy X a Y intuitivně spojením označení
+                        obou vrcholů: XY. Z matematického hlediska nejde o úplně přesné vyjádření, ale pro
+                        pochopení principů si s ním vystačíme. Kdybychom měli být matematicky přesní, hranu
+                        XY bychom zapsali jako dvouprvkovou množinu obsahující odpovídající vrcholy: {X, Y}.
+                    </p>
+                </div>
+
+                <!-- TODO: Přidej úkol z následující V a E vytvoř/nakresli graf -->
+            </div>
+
+            <p>
+                Než si zavedeme několik užitečných pojmů, podíváme se na jednoduché rozšíření, tzv. <span class="term">ohodnocený
+                graf</span>. V ohodnoceném grafu ke každé hraně dostaneme číselné ohodnocení (často toto číslo vyjadřuje
+                <q>cenu</q>, viz dále). O grafech, o kterých jsme mluvili doposud, budeme nadále mluvit jako o grafech (bez
+                přívlastku) nebo jako o neohodnocených grafech. Neohodnocený graf můžeme na ohodnocený převést jednoduše tak,
+                že všem hranám dáme stejné ohodnocení – typicky jedničku.
+            </p>
+
+            <div class="example double">
+                <figure>
+                    <figcaption>Graf D: graf B přímo převedený na ohodnocený graf</figcaption>
+                    <img src="graphs/weighted-graph1.svg" alt="Graf s hranami AB, AC, AE, CD, CE" />
+                </figure><figure>
+                    <figcaption>Graf E: jako graf D s jiným ohodnocením hran</figcaption>
+                    <img src="graphs/weighted-graph2.svg" alt="Graf s hranami AB, AC, AE, CD, CE" />
+                </figure>
+            </div>
+
+            <p>
+                Užitečným termínem teorie grafů je tzv. <span class="term">cesta</span> v grafu. Cesta je posloupnost
+                na sebe navazujících hran z jednoho vrcholu do druhého bez opakování. V prvním grafu výše nemáme
+                žádnou hranu, takže ani žádnou cestu. V druhém grafu už je cest spousta dokonce i mezi
+                stejnými vrcholy. Například mezi vrcholy B a D máme dvě cesty, první přes hrany AB-AC-CD
+                a druhou přes hrany AB-AE-CE-CD. Pojmem nejkratší cesty mezi dvěma vrcholy myslíme takovou
+                cestu, která se skládá z nejmenšího počtu hran. V případě ohodnocených grafů nemá nejkratší
+                cesta nutně nejmenší počet hran, ale chceme, aby součet jejich ohodnocení byl minimální.
+            </p>
+
+            <div class="example">
+                <p>
+                    Na následujících příkladech můžeš hezky vidět, jak ohodnocení hran mění vlastnosti grafů, které
+                    jsou jinak strukturou stejné.
+                </p>
+
+                <div class="triple">
+                    <figure>
+                        <figcaption>Graf B s vyznačenou nejkratší cestou mezi vrcholy B a C</figcaption>
+                        <img src="graphs/shortest-path1.svg" alt="Graf s hranami AB, AC, AE, CD, CE" />
+                    </figure>
+                    <figure>
+                        <figcaption>Graf D s nejkratší cestou mezi vrcholy B a C</figcaption>
+                        <img src="graphs/shortest-path2.svg" alt="Graf s hranami AB (3), AC (4), AE (2), CD (2), CE (1)" />
+                    </figure>
+                    <figure>
+                        <figcaption>Graf E s nejkratší cestou mezi vrcholy B a C</figcaption>
+                        <img src="graphs/shortest-path3.svg" alt="Graf s hranami AB (3), AC (4), AE (2), CD (2), CE (1)" />
+                    </figure>
+                </div>
+
+                <div class="notice">
+                    <p>
+                        Z příkladů výše by tě mohlo napadnout, proč při převádění neohodnoceného grafu na ohodnocený
+                        dáváme všem hranám stejnou cenu.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                Někdy se nebudeme zabývat celým grafem, ale třeba jen jeho částí. Termínem <span class="term">podgraf</span>
+                rozumíme graf, který má alespoň některé vrcholy a hrany původního grafu, ale zároveň nemá žádné hrany
+                ani vrcholy navíc.
+            </p>
+
+            <div class="example">
+                <p>
+                    V příkladech výše najdeš graf A, který je podgrafem jak grafu B, tak i grafu C. Oproti tomu graf B
+                    není podgrafem grafů A ani C, protože obsahuje hrany, které ostatní grafy nemají. Ani graf C není
+                    podgrafem druhých dvou grafů – například hrana BD není přítomná ani v jednom z nich.
+                </p>
+            </div>
+
+            <p>
+                Dalším pojem, který si dnes vysvětlíme, je <span class="term">souvislost</span>. O grafu řekneme, že je souvislý,
+                pokud z každého vrcholu grafu vede cesta do libovolného jiného vrcholu (tj. z každého vrcholu se můžeme
+                dostat do jiného). Graf B je souvislým grafem, grafy A a C souvislé nejsou.
+            </p>
+
+            <p>
+                Posledním termínem, který si zavedeme, je <span class="term">kostra</span> grafu. Kostra grafu je souvislý
+                podgraf (tj. o kostře se má smysl bavit jen u souvislých grafů), který obsahuje všechny vrcholy
+                původního grafu a pro každou hranu kostry platí, že po jejím odstranění by již nešlo o kostru grafu. Jinak
+                řečeno, kostra obsahuje pouze ty hrany, které jsou potřebné k propojení všech vrcholů a žádné
+                jiné.
+            </p>
+
+            <p>
+                V případě ohodnocených grafů pak můžeme mluvit o minimální kostře. To je taková kostra, jejíž součet
+                ohodnocení jejích hran je minimální.
+            </p>
+
+            <div class="example">
+                <div class="triple">
+                    <figure>
+                        <figcaption>Graf B s vyznačenou jednou ze tří možných koster</figcaption>
+                        <img src="graphs/spanning-tree1.svg" alt="Graf s hranami AC, AE, CE, BD s vyznačenou kostrou" />
+                    </figure>
+                    <figure>
+                        <figcaption>Graf E s vyznačenou kostrou s cenou 11</figcaption>
+                        <img src="graphs/spanning-tree2.svg" alt="Graf s hranami AB, AC, AE, CD, CE s vyznačenou kostrou s hranou CE" />
+                    </figure>
+                    <figure>
+                        <figcaption>Graf E s vyznačenou minimální kostrou s cenou 8</figcaption>
+                        <img src="graphs/spanning-tree3.svg" alt="Graf s hranami AB, AC, AE, CD, CE s vyznačenou kostrou s hranou AE" />
+                    </figure>
+                </div>
+
+                <div class="notice">
+                    <p>Má smysl mluvit o minimální kostře v neohodnoceném grafu? Proč?</p>
+                </div>
+            </div>
+
+            <h2>Praktické využití grafů</h2>
+
+            <p>
+                V předchozí části jsme si zavedli grafy a několik pojmů, teď se podíváme na slíbené praktické aplikace.
+            </p>
+
+            <p>
+                První aplikací, na kterou se podíváme, je průchod bludištěm. Bludiště má vchod a východ, přičemž naším úkolem je
+                najít cestu bludištěm tak, abychom se od vchodu dostali k východu. Pojem cesty máme i v grafech, přičemž úloha,
+                kterou budeme řešit, je přesně hledání cesty v grafu. Jediné, co musíme nejprve udělat, je převést bludiště na graf
+                tak, cesta v grafu odpovídala cestě v bludišti. Naštěstí to není vůbec těžké. Než budeš číst dál, zkus se nejdřív
+                zamyslet, jak bys to udělal.
+            </p>
+
+            <p>
+                Přišel jsi na to? Jedním z možných řešení je umístit do každé křižovatky / zatáčky bludiště vrchol grafu. Hranami
+                pak spojíme všechny vrcholy, které spolu bezprostředně souvisí a můžeme se mezi odpovídajícími křižovatkami
+                přesouvat (tj. v grafu mezi křižovatkami neleží žádná stěna).
+            </p>
+
+            <div class="example triple">
+                <figure>
+                    <figcaption>Bludiště</figcaption>
+                    <img src="graphs/labyrinth.svg" alt="" />
+                </figure>
+                <figure>
+                    <figcaption>Bludiště doplněné o vrcholy a hrany</figcaption>
+                    <img src="graphs/labyrinth-graph.svg" alt="" />
+                </figure>
+                <figure>
+                    <figcaption>Graf odpovídající bludišti s vyznačenou cestou</figcaption>
+                    <img src="graphs/labyrinth-graph-only.svg" alt="" />
+                </figure>
+            </div>
+
+            <p>
+                Jak můžeš vidět na příkladu výše, převedli jsme bludiště na graf a hledání cesty ze startu do cíle jsme převedli
+                na hledání cesty v grafu mezi dvěma vrcholy. Dalším praktickým příkladem, který funguje stejně, je
+                běžná navigace. Jediným rozdílem je, že na graf nepřevádíme bludiště, ale reálné ulice – v konečném důsledku
+                v tom ale není příliš velký rozdíl, viď?
+            </p>
+
+            <p>
+                Praktickou aplikací z jiného soudku je elektrické vedení. Představme si, že máme elektrárnu a několik vesnic, mezi
+                kterými je potřeba natáhnout elektrické vedení tak, aby všechny vesnice měly zajištěné dodávky elektřiny, ale zároveň
+                aby bylo natažení vedení co nejlevnější.
+            </p>
+
+            <p>
+                Stejně jako v případě bludiště a navigace si nejdřív úlohu musíme převést na graf – z vesnic a elektrárny uděláme
+                vrcholy, které propojíme hranami s ohodnocením, které odpovídá ceně natažení vedení. Jakmile máme graf odpovídající
+                úloze, stačí nám najít kostru grafu, respektive minimální kostru grafu, protože chceme, aby nás vedení vyšlo co
+                nejlevněji.
+            </p>
+
+            <div class="example triple">
+                <figure>
+                    <figcaption>Plánek s vesnicemi a elektrárnou k elektrifikaci</figcaption>
+                    <img src="graphs/electification1.svg" alt="" />
+                </figure>
+                <figure>
+                    <figcaption>Graf odpovídající předchozímu plánku s elektrárnou a vesnicemi (ohodnocení hran jsme si zvolili sami dle terénu)</figcaption>
+                    <img src="graphs/electification2.svg" alt="" />
+                </figure>
+                <figure>
+                    <figcaption>Graf odpovídající plánku s vyznačenou minimální kostrou (cena 19)</figcaption>
+                    <img src="graphs/electification3.svg" alt="" />
+                </figure>
+            </div>
+
+            <div class="notice">
+                <p>Zajímavostí je, že v principu stejnou úlohu řešil český matematik Otakar Borůvka (viz
+                   <a href="https://en.wikipedia.org/wiki/Otakar_Bor%C5%AFvka">Wikipedie</a>) ve třicátých letech minulého století.</p>
+            </div>
+
+            <p>
+                Tímto možnosti aplikace teorie grafů nekončí, jejich další uplatnění lze najít i při výpočtech kapacit vodovodních sítí,
+                párování (např. uchazečů a škol včetně preferencí), ale i v chemii či například lingvistice.
+            </p>
+
+            <div class="summary">
+                <h3>Shrnutí</h3>
+                <ul>
+                    <li>graf: dvojice množiny vrcholů (V) a hran (E)</li>
+                    <li>ohodnocený graf: graf, ke kterému máme ještě navíc ke každé hraně informace o jejím ohodnocení (ceně)</li>
+                    <li>cesta grafu: souvislá posloupnost hran bez opakování mezi dvěma vrcholy</li>
+                    <li>délka cesty: počet hran, v případě ohodnoceného grafu součet ohodnocení jednotlivých hran</li>
+                    <li>komponenta (souvislosti): podmnožina vrcholů grafu, pro které platí, že mezi dvěma libovolnými vrcholy vede cesta</li>
+                    <li>souvislý graf: graf, který sám tvoří jednu komponentu souvislosti</li>
+                    <li>kostra grafu: podgraf obsahující všechny vrcholy původního grafu a vybrané hrany takové, že mezi všemi vrcholy vede cesta
+                        a zároveň nemůžeme žádnou hranu odebrat, aniž by nedošlo k porušení předchozí podmínky</li>
+                </ul>
+
+                <div class="notice">
+                    <p>Pokud tě teorie grafů zaujala, můžeš se podívat například na web <a href="https://teorie-grafu.cz/">teorie-grafu.cz</a>,
+                    který jde více do hloubky.</p>
+                </div>
+            </div>
+
+            <div class="quickcheck">
+                <p>Na konci této kapitoly bys měl být schopen:</p>
+
+                <ul>
+                    <li>intuitivně umět vysvětlit pojem (neohodnoceného) grafu a ohodnoceného grafu</li>
+                    <li>rozponat, zda je jeden graf podgrafem jiného</li>
+                    <li>vysvětlit rozdíl mezi cestou a kostrou grafu</li>
+                    <li>uvést alespoň jeden příklad využití grafů v praxi</li>
+                </ul>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

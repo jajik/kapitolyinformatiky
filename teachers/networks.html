@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Pro učitele: Počítačové sítě a internet | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="../chapters/index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Počítačové sítě a internet</h1>
+
+            <p>
+                Počítačové sítě jsou velmi bohatým a zároveň poměrně vděčným tématem. V ukázkové hodině se zaměříme pouze na část
+                toho, co pokrývá samotná kapitola. Ani ta nepokrývá zdaleka vše, vhodným dalším rozšířením můžou být jednotlivé
+                síťové topologie a pak také jednotlivé modely sítí (klient-server a peer-to-peer).
+            </p>
+
+            <h2>Modelový příklad vyučovací hodiny</h2>
+
+            <p>
+                Ukázková hodina do velké míry kopíruje samotný učební text.
+            </p>
+
+            <p>
+                Cíl hodiny: Žák zná pojem IP adresy a ví, kde a k čemu se používá. Žák umí intuitivně popsat cestu zprávy sítí.
+            </p>
+
+            <ul class="plan">
+                <li>
+                    Úvod (5 minut)
+                    <ul>
+                        <li>Co je to internet?</li>
+                    </ul>
+                </li>
+                <li>
+                    Posíláme zprávy (30 minut)
+                    <ul>
+                        <li>ISO/OSI a TCP/IP modely</li>
+                        <li>největší pozornost věnujte vrstvám L2-L4 včetně pojmů</li>
+                        <li>IP adresy a směrování</li>
+                        <li>skupinová aktivita popsaná níže</li>
+                    </ul>
+                </li>
+                <li>
+                    Závěr (5-10 minut)
+                    <ul>
+                        <li>zdůrazněte IP adresy a proces směrování paketu sítí</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="notice">
+                <p>
+                    Pokud máte v hodinách dostatek prostoru, zkuste při probírání ISO/OSI nebo TCP/IP modelů následující aktivitu.
+                </p>
+                <p>
+                    Připravte si dostatečný počet různě velikých obálek. Každá obálka bude odpovídat jedné vrstvě vámi vybraného modelu.
+                    Žáky rozdělte tak, aby reprezentovali prvky v síti, a takto demonstrujte poslání zprávy mezi dvěma koncovými stanicemi.
+                    Pokud nemáte dost žáků, stačí si toto zabalování a vybalování demonstrovat společně na místě.
+                </p>
+
+                <div class="warn">
+                    <p>
+                        Obálku reprezentující nižší vrstvy, které se mění během každého skoku, je lepší než stále dokola nadepisovat
+                        přelepovat obyčejnými lepícími štítky.
+                    </p>
+                </div>
+                <p>
+                    Smyslem aktivity je fyzicky si vyzkoušet, že se jednotlivé prvky dívají jen do těch vrstev (obálek), které potřebují
+                    ke své funkcí. Zároveň toto obálkové cvičení pomůže vyjasnit pro žáky občas matoucí vnořování vyšších vrstev do vrstev nižších.
+                </p>
+            </div>
+
+            <div class="notice">
+                <p>Pokud vyučujete informatiku v počítačové učebně, určitě zvažte zapojení běžných síťových nástrojů do výuky (vize příklady
+                    v sekci Procvičování). Pokud se nebojíte výzev, podívejte se na program Wireshark, který umí monitorovat reálný provoz.
+                    Na internetu k němu naleznete nespočet kvalitních materiálů.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

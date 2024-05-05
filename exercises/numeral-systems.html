@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Cvičení: Číselné soustavy | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/exercises/numeral-systems.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="../chapters/index.html">Kapitoly</a></li>
+                <li><a href="index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+            <h1>Procvičování: Číselné soustavy</h1>
+
+            <div class="warn">
+                <p>
+                    Pokud jsi ještě nečetl kapitolu Číselné soustavy, teď je vhodný čas, jinak
+                    budou cvičení níže zbytečně těžká.
+                </p>
+            </div>
+
+            <h2>Dvojková soustava</h2>
+
+            <p>
+                Nejprve budeme převádět z dvojkové do desítkové. Výsledky si zobrazíš kliknutím na daný příklad.
+            </p>
+
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            110<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>2</sup> + 1 · 2<sup>1</sup> + 0 · 2<sup>0</sup> = 6<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            1001<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>3</sup> + 0 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 9<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            11001<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>4</sup> + 1 · 2<sup>3</sup> + 0 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 25<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            111111<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>5</sup> + 1 · 2<sup>4</sup> + 1 · 2<sup>3</sup> + 1 · 2<sup>2</sup> + 1 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 63<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            1000000<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>6</sup> = 64<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            1001100<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>6</sup> + 0 · 2<sup>5</sup> + 0 · 2<sup>4</sup> + 1 · 2<sup>3</sup> + 1 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 0 · 2<sup>0</sup> = 76<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            11111111<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>8</sup> - 1 = 255<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            11011001<sub>2</sub> = 
+                        </summary>
+                        1 · 2<sup>7</sup> + 1 · 2<sup>6</sup> + 0 · 2<sup>5</sup> + 1 · 2<sup>4</sup> + 1 · 2<sup>3</sup> + 0 · 2<sup>2</sup> + 0 · 2<sup>1</sup> + 1 · 2<sup>0</sup> = 217<sub>10</sub>
+                    </details>
+                </li>
+            </ul>
+
+            <p>
+                Následují příklady na převody druhým směrem.
+            </p>
+
+            <details>
+                <summary>
+                    <p>
+                        1) Převeď 783<sub>10</sub> a 816<sub>10</sub> do dvojkové soustavy.
+                    </p>
+                </summary>
+                <div class="double">
+                    <div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>783</td><td>391</td><td>1</td></tr>
+                                <tr><td>391</td><td>195</td><td>1</td></tr>
+                                <tr><td>195</td><td>97</td><td>1</td></tr>
+                                <tr><td>97</td><td>48</td><td>1</td></tr>
+                                <tr><td>48</td><td>24</td><td>0</td></tr>
+                                <tr><td>24</td><td>12</td><td>0</td></tr>
+                                <tr><td>12</td><td>6</td><td>0</td></tr>
+                                <tr><td>6</td><td>3</td><td>0</td></tr>
+                                <tr><td>3</td><td>1</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div><div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>816</td><td>408</td><td>0</td></tr>
+                                <tr><td>408</td><td>204</td><td>0</td></tr>
+                                <tr><td>204</td><td>102</td><td>0</td></tr>
+                                <tr><td>102</td><td>51</td><td>0</td></tr>
+                                <tr><td>51</td><td>25</td><td>1</td></tr>
+                                <tr><td>25</td><td>12</td><td>1</td></tr>
+                                <tr><td>12</td><td>6</td><td>0</td></tr>
+                                <tr><td>6</td><td>3</td><td>0</td></tr>
+                                <tr><td>3</td><td>1</td><td>1</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Dostáváme 783<sub>10</sub> = 1100001111<sub>2</sub> a 816<sub>10</sub> = 1100110000<sub>2</sub>.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    <p>
+                        2) Převeď 1305<sub>10</sub> a 1440<sub>10</sub> do dvojkové soustavy.
+                    </p>
+                </summary>
+                <div class="double">
+                    <div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1305</td><td>652</td><td>1</td></tr>
+                                <tr><td>652</td><td>326</td><td>0</td></tr>
+                                <tr><td>326</td><td>163</td><td>0</td></tr>
+                                <tr><td>163</td><td>81</td><td>1</td></tr>
+                                <tr><td>81</td><td>40</td><td>1</td></tr>
+                                <tr><td>40</td><td>20</td><td>0</td></tr>
+                                <tr><td>20</td><td>10</td><td>0</td></tr>
+                                <tr><td>10</td><td>5</td><td>0</td></tr>
+                                <tr><td>5</td><td>2</td><td>1</td></tr>
+                                <tr><td>2</td><td>1</td><td>0</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div><div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1440</td><td>720</td><td>0</td></tr>
+                                <tr><td>720</td><td>360</td><td>0</td></tr>
+                                <tr><td>360</td><td>180</td><td>0</td></tr>
+                                <tr><td>180</td><td>90</td><td>0</td></tr>
+                                <tr><td>90</td><td>45</td><td>0</td></tr>
+                                <tr><td>45</td><td>22</td><td>1</td></tr>
+                                <tr><td>22</td><td>11</td><td>0</td></tr>
+                                <tr><td>11</td><td>5</td><td>1</td></tr>
+                                <tr><td>5</td><td>2</td><td>1</td></tr>
+                                <tr><td>2</td><td>1</td><td>0</td></tr>
+                                <tr><td>1</td><td>0</td><td>1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Dostáváme 1305<sub>10</sub> = 10100011001<sub>2</sub> a 1440<sub>10</sub> = 10110100000<sub>2</sub>.
+                </p>
+            </details>
+
+            <h2>Šestnáctková soustava</h2>
+
+            <p>
+                Opět začneme převody z šestnáctkové do desítkové.
+            </p>
+
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            89<sub>16</sub> = 
+                        </summary>
+                        8 · 16<sup>1</sup> + 9 · 16<sup>0</sup> = 137<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            E3<sub>16</sub> = 
+                        </summary>
+                        14 · 16<sup>1</sup> + 3 · 16<sup>0</sup> = 227<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            2AF<sub>16</sub> = 
+                        </summary>
+                        2 · 16<sup>2</sup> + 10 · 16<sup>1</sup> + 15 · 16<sup>0</sup> = 687<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            CAFE<sub>16</sub> = 
+                        </summary>
+                        12 · 16<sup>3</sup> + 10 · 16<sup>2</sup> + 15 · 16<sup>1</sup> + 14 · 16<sup>0</sup> = 51966<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            FF00<sub>16</sub> = 
+                        </summary>
+                        15 · 16<sup>3</sup> + 15 · 16<sup>2</sup> + 0 · 16<sup>1</sup> + 0 · 16<sup>0</sup> = 65280<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            FE80<sub>16</sub> = 
+                        </summary>
+                        15 · 16<sup>3</sup> + 14 · 16<sup>2</sup> + 8 · 16<sup>1</sup> + 0 · 16<sup>0</sup> = 65152<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            ABBAC0<sub>16</sub> = 
+                        </summary>
+                        10 · 16<sup>5</sup> + 11 · 16<sup>4</sup> + 11 · 16<sup>3</sup> + 10 · 16<sup>2</sup> + 12 · 16<sup>1</sup> + 0 · 16<sup>0</sup> = 11254464<sub>10</sub>
+                    </details>
+                </li>
+            </ul>
+
+            <p>
+                Následují převody z desítkové do šestnáctkové.
+            </p>
+
+            <details>
+                <summary>
+                    <p>
+                        1) Převeď 984266<sub>10</sub> a 12648430<sub>10</sub> do šestnáctkové soustavy.
+                    </p>
+                </summary>
+                <div class="double">
+                    <div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>984266</td><td>61516</td><td>10 (= A)</td></tr>
+                                <tr><td>61516</td><td>3844</td><td>12 (= C)</td></tr>
+                                <tr><td>3844</td><td>240</td><td>4</td></tr>
+                                <tr><td>240</td><td>15</td><td>0</td></tr>
+                                <tr><td>15</td><td>0</td><td>15 (= F)</td></tr>
+                            </tbody>
+                        </table>
+                    </div><div>
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>12648430</td><td>790526</td><td>14 (= E)</td></tr>
+                                <tr><td>790526</td><td>49407</td><td>14 (= E)</td></tr>
+                                <tr><td>49407</td><td>3087</td><td>15 (= F)</td></tr>
+                                <tr><td>3087</td><td>192</td><td>15 (= F)</td></tr>
+                                <tr><td>192</td><td>12</td><td>0 (= 0)</td></tr>
+                                <tr><td>12</td><td>0</td><td>12 (= C)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Dostáváme 984266<sub>10</sub> = F04CA<sub>16</sub> a 12648430<sub>10</sub> = C0FFEE<sub>16</sub>.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    <p>
+                        2) Převeď 69627149<sub>10</sub> a 2334442490<sub>10</sub> do šestnáctkové soustavy.
+                    </p>
+                </summary>
+                <div class="double">
+                    <div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>69627149</td><td>4351696</td><td>13 (= D)</td></tr>
+                                <tr><td>4351696</td><td>271981</td><td>0</td></tr>
+                                <tr><td>271981</td><td>16998</td><td>13 (= D)</td></tr>
+                                <tr><td>16998</td><td>1062</td><td>6</td></tr>
+                                <tr><td>1062</td><td>66</td><td>6</td></tr>
+                                <tr><td>66</td><td>4</td><td>2</td></tr>
+                                <tr><td>4</td><td>0</td><td>4</td></tr>
+                            </tbody>
+                        </table>
+                    </div><div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2334442490</td><td>145902655</td><td>10 (= A)</td></tr>
+                                <tr><td>145902655</td><td>9118915</td><td>15 (= F)</td></tr>
+                                <tr><td>9118915</td><td>569932</td><td>3</tr></tr>
+                                <tr><td>569932</td><td>35620</td><td>12 (= C)</td></tr>
+                                <tr><td>35620</td><td>2226</td><td>4</td></tr>
+                                <tr><td>2226</td><td>139</td><td>2</td></tr>
+                                <tr><td>139</td><td>8</td><td>11 (= B)</td></tr>
+                                <tr><td>8</td><td>0</td><td>8</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Dostáváme 69627149<sub>10</sub> = 4266D0D<sub>16</sub> a 2334442490<sub>10</sub> = 8B24C3FA<sub>16</sub>.
+                </p>
+            </details>
+
+            <h2>Dvojková s šestnáctkovou</h2>
+
+            <p>
+                Když jsme se zabývali šestnáctkovou soustavou, řekli jsme si, že jednou z výhod a důvodů, proč ji používáme, je
+                její přímá korespondence s dvojkovou soustavou, která nám usnadňuje převody mezi těmito dvěma soustavami.
+            </p>
+
+            <p>
+                Převeď následující čísla z šestnáctkové do dvojkové soustavy.
+            </p>
+
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            89<sub>16</sub> = 
+                        </summary>
+                        1000 1001<sub>2</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            E3<sub>16</sub> = 
+                        </summary>
+                        1110 0011<sub>2</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            2AF<sub>16</sub> = 
+                        </summary>
+                        0010 1010 1111<sub>2</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            CAFE<sub>16</sub> = 
+                        </summary>
+                        1100 1010 1111 1110<sub>2</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            FF00<sub>16</sub> = 
+                        </summary>
+                        1111 1111 0000 0000<sub>2</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            FE80<sub>16</sub> = 
+                        </summary>
+                       1111 1110 1000 0000<sub>2</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            ABBAC0<sub>16</sub> = 
+                        </summary>
+                        1010 1011 1011 1010 1100 0000<sub>2</sub>
+                    </details>
+                </li>
+            </ul>
+
+            <p>
+                Převeď následující čísla z dvojkové soustavy do šestnáctkové.
+            </p>
+
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            1101 0001<sub>2</sub> =
+                        </summary>
+                        D1<sub>16</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            0011 1001<sub>2</sub> =
+                        </summary>
+                        39<sub>16</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            0100 1110 1011<sub>2</sub> =
+                        </summary>
+                        4EB<sub>16</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            0001 0000 0111<sub>2</sub> =
+                        </summary>
+                        107<sub>16</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            11 1001 1000<sub>2</sub> =
+                        </summary>
+                        0011 1001 1000<sub>2</sub> = 398<sub>16</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            1 0001<sub>2</sub> =
+                        </summary>
+                        0001 0001<sub>2</sub> = 11<sub>16</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            0010 0101 0111 1100<sub>2</sub> =
+                        </summary>
+                        257C<sub>16</sub>
+                    </details>
+                </li>
+            </ul>
+
+
+            <h2>Extra</h2>
+
+            <p>
+                V této části si zkusíme převody z pětkové soustavy, kterou si právě vytvoříme. Tato soustava
+                bude mít pět symbolů vzestupně seřazených takto: α, β, γ, δ, ε (tj. α odpovídá nule a ε čtyřce).
+            </p>
+
+            <p>
+                Převod z pětkové do desítkové.
+            </p>
+
+            <ul>
+                <li>
+                    <details>
+                        <summary>
+                            βα<sub>5</sub> =
+                        </summary>
+                        1 · 5<sup>1</sup> + 0 · 5<sup>0</sup> = 5<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            γε<sub>5</sub> =
+                        </summary>
+                        2 · 5<sup>1</sup> + 4 · 5<sup>0</sup> = 14<sub>10</sub>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            δδβ<sub>5</sub> =
+                        </summary>
+                        3 · 5<sup>2</sup> + 3 · 5<sup>1</sup> + 1 · 5<sup>0</sup> = 91<sub>10</sub>
+                    </details>
+                </li>
+            </ul>
+
+            <p>
+                A následují převody opačným směrem.
+            </p>
+
+            <details>
+                <summary>
+                    <p>
+                        1) Převeď 321<sub>10</sub> a 479<sub>10</sub> do naší pětkové soustavy.
+                    </p>
+                </summary>
+                <div class="double">
+                    <div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>321</td><td>64</td><td>1 (= β)</td></tr>
+                                <tr><td>64</td><td>12</td><td>4 (= ε)</td></tr>
+                                <tr><td>12</td><td>2</td><td>2 (= γ)</td></tr>
+                                <tr><td>2</td><td>0</td><td>2 (= γ)</td></tr>
+
+                            </tbody>
+                        </table>
+                    </div><div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>479</td><td>95</td><td>0 (= α)</td></tr>
+                                <tr><td>95</td><td>19</td><td>4 (= ε)</td></tr>
+                                <tr><td>19</td><td>3</td><td>4 (= ε)</td></tr>
+                                <tr><td>3</td><td>0</td><td>3 (= δ)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Dostáváme 321<sub>10</sub> = γγεβ<sub>5</sub> a 479<sub>10</sub> = δεεα<sub>5</sub>.
+                </p>
+            </details>
+
+            <p>
+                Úplně stejně jako u ostatních soustav můžeme převádět z pětkové i do dvojkové a šestnáctkové
+                soustavy a naopak. Využijeme náš univerzální převod se dvěma fázemi.
+            </p>
+
+            <details>
+                <summary>
+                    <p>
+                        2) Převeď CAFE<sub>16</sub> do naší pětkové soustavy a εδγεα<sub>5</sub> do šestnáctkové.
+                    </p>
+                </summary>
+                <div class="double">
+                    
+                    <div class="wrapper">
+                        <p>
+                            fáze 1: CAFE<sub>16</sub> = 12 · 16<sup>3</sup> + 10 · 16<sup>2</sup> + 15 · 16<sup>1</sup> + 14 · 16<sup>0</sup> = 51966<sub>10</sub>.
+                        </p>
+
+                        <p>fáze 2:</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>51966</td><td>10393</td><td>1 (= β)</td></tr>
+                                <tr><td>10393</td><td>2078</td><td>3 (= δ)</td></tr>
+                                <tr><td>2078</td><td>415</td><td>3 (= δ)</td></tr>
+                                <tr><td>415</td><td>83</td><td>0 (= α)</td></tr>
+                                <tr><td>83</td><td>16</td><td>3 (= δ)</td></tr>
+                                <tr><td>16</td><td>3</td><td>1 (= β)</td></tr>
+                                <tr><td>3</td><td>0</td><td>3 (= δ)</td></tr>
+                            </tbody>
+                        </table>
+                    </div><div class="wrapper">
+                        <p>
+                            fáze 1: εδγεα<sub>5</sub> = 4 · 5<sup>3</sup> + 3 · 5<sup>2</sup> + 2 · 5<sup>1</sup> + 0 · 5<sup>0</sup> = 585<sub>10</sub>
+                        </p>
+
+                        <p>fáze 2:</p>
+
+                        <table>
+                            <thead>
+                                <tr><th>Číslo</th><th>děleno</th><th>modulo</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>585</td><td>36</td><td>9</td></tr>
+                                <tr><td>36</td><td>2</td><td>4</td></tr>
+                                <tr><td>2</td><td>0</td><td>2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Dostáváme CAFE<sub>16</sub> = δβδαδδβ<sub>5</sub> a εδγεα<sub>5</sub> = 249<sub>16</sub>.
+                </p>
+            </details>            
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

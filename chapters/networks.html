@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Počítačové sítě a internet | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/chapters/networks.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+
+            <h1> Počítačové sítě a internet</h1>
+
+            <p>
+                Většina z nás internet používá každý den. Víš ale, jak funguje?
+            </p>
+
+            <p>
+                <span class="term">Internet</span> je globální počítačová síť. Počítačová síť
+                není nic jiného než skupina vzájemně propojených počítačů, díky čemuž
+                mezi nimi může probíhat komunikace (mohou si vyměňovat zprávy).
+            </p>
+
+            <div class="example">
+                <div class="double">
+                    <figure>
+                        <figcaption>Dnes běžný pohled na internet, nějaký obláček nad námi...</figcaption>
+                        <img src="networks/internet1.svg" alt="" />
+                    </figure><figure>
+                        <figcaption>... ale obláček není nic jiného než spousta propojených počítačů</figcaption>
+                        <img src="networks/internet2.svg" alt="" />
+                    </figure>
+                </div>
+
+                <div class="notice">
+                    <p>
+                        Možná je to až neuvěřitelné, ale pokud se připojuješ k serveru třeba v Americe,
+                        existuje fyzické (resp. fyzikální při šíření vzduchem) spojení, přes které se
+                        zpráva šíří. Určite stojí za to podívat se třeba na 
+                        <a href="https://www.submarinecablemap.com/">mapu podmořských kabelů</a>, kde
+                        můžeš vidět, jak jsou kontinenty fyzicky propojeny. Na popularitě nabývá i
+                        připojení, i díky Starlinku od SpaceX, přičemž na polohu takových satelitů se
+                        můžeš podívat třeba <a href="https://satellitemap.space/?norad=48119">tady</a>. 
+                    </p>
+                    <p>
+                        Pokud hraješ videohry, asi jsi už narazil na pojem latence nebo ping. Obě slovíčka
+                        se vztahují k době prodlevy mezi odesláním zprávy z našeho počítače na server a
+                        obdržení odpovědi ze serveru a typicky jej měříme v milisekundách. Pochopitelně
+                        platí, že čím je tento čas kratší, tím lépe.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                Tato výměna zpráv je velice důležitá, v internetu jsou připojeny miliardy zařízení,
+                a tak aby vše fungovalo, máme standardizováno, jak mají ony zprávy (komunikace) vypadat.
+                To je účel tzv. <span class="term">síťových protokolů</span>. Může jít o způsob posílání a zpracování
+                elektronické pošty (e-mailu), prosté připojení se k Wi-Fi nebo třeba videohovor. Vše
+                musí být jasně popsáno, aby všechna zařízení v síti věděla, co mají dělat a my se mohli
+                spojit.
+            </p>
+
+            <p>
+                Zmínili jsme si e-mail a videohovory, ale služeb internetu je mnohem více. Aby se nám lidem
+                o sítích lépe přemýšlelo a zároveň, abychom měli nějakou klasifikaci oněch protokolů, existují
+                dva základní síťové modely. Prvním je <span class="term">ISO/OSI model</span>, druhým je trochu
+                úspornější <span class="term">TCP/IP model</span>. Oba dva modely popisují počítačové sítě, v případě
+                druhého modelu však autoři nepovažovali za nutné některé aspekty rozlišovat.
+            </p>
+
+            <div class="example double">
+                <figure>
+                    <figcaption>ISO/OSI model rozlišuje sedm vrstev</figcaption>
+                    <img src="networks/osi-iso.svg" alt="" />
+                </figure><figure>
+                    <figcaption>TCP/IP model rozlišuje čtyři vrstvy</figcaption>
+                    <img src="networks/tcp-ip.svg" alt="" />
+                </figure>
+            </div>
+
+            <p>
+                Vrstvy modelu se číslují odspodu, fyzická vrstva je tzv. L1 (z anglického layer), vrstva
+                datového spoje L2 a tak dále až po L7 – aplikační vrstvu. Jak je z názvů možná patrné,
+                spodní vrstvy jsou blíže hardwaru (fyzická zařízení, kabely, etc.) vyšší vrstvy jsou blíže
+                uživateli (jedna z motivací sdružení L5-L7 do jedné vrstvy v rámci TCP/IP modelu je právě to,
+                že jsou realizovány v rámci aplikací).
+            </p>
+
+            <p>
+                Každá síťová vrstva staví na té předchozí, ke které přidává další funkcionalitu. Naopak
+                neplatí, že by všechna zařízení v síti musela umět pracovat na všech vrstvách (a tedy
+                podporovat protokoly každé vrstvy). Běžně v síti funguje spousta zařízení, která umí jen
+                pár prvních vrstev, jak si ukážeme později.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Abych to přece jen trochu přiblížil, dovolím si jemně předběhnout: vnímej to tak, že
+                    tvůj Wi-Fi router (typické L1-L3/L4 zařízení) nemusí umět pracovat s tvými e-maily
+                    (typický zástupce L7 protokolu), k tomu slouží e-mailový server.
+                </p>
+            </div>
+
+            <p>
+                V této kapitole si postupně projdeme první čtyři vrstvy ISO/OSI modelu, u zbývajících tří
+                vrstev zvolíme strategii TCP/IP modelu a řekneme si něco o nich souhrnně. Než se tak stane,
+                zkusíme si přiblížit, jak data v sítích putují. A jak jinak to udělat než na příkladu
+                obyčejné pošty.
+            </p>
+
+            <h2>Posíláme dopis</h2>
+
+            <p>
+                Když někomu chceme poslat dopis, potřebujeme k tomu hned několik věcí. V prvé řadě potřebujeme
+                samotný dopis (text), který chceme poslat. Ten napíšeme na papír a vložíme jej do obálky a tu
+                zalepíme. Dopis si má rozlepit až adresát, všechny informace, které jsou potřeba pro doručení
+                dopisu píšeme na vnější stranu. Jaké informace vlastně potřebujeme?
+            </p>
+
+            <p>
+                Zpravidla začínáme jménem adresáta. Následuje adresa, ve které začínáme od nejspecifičtějších
+                informací (číslo popisné, ulice) a pokračujeme k těm obecnějším (PSČ, město, stát).
+                V různých fázích doručování budou používané různé části adresy. V případě doporučeného psaní
+                uvedeme i adresu odesílatele, a následně se můžeme s dopisem vydat na poštu či k poštovní
+                schránce, kde dopis odešleme.
+            </p>
+
+            <p>
+                Odesláním končí naše práce, ale to zajímavé teprve začíná. Pošta si vezme náš dopis a podívá
+                se, kam jej má doručit. Podívá se na adresu, přičemž začíná od nejméně specifických údajů: státu
+                a města. Nachází se pošta ve městě jako adresát? Pokud ne, nemusí číst dále a přepošle dopis
+                na odpovídající pobočku. Pokud ano, pokračuje dalšími údaji jako jsou PSČ a ulice. V rámci větších
+                měst můžeme mít více poboček a stávající pobočka, byť ve správném městě, nemusí být pro danou
+                adresu spádová, a tak dojde k dalšímu přeposlání. Nakonec se dopis dostane na správnou pobočku
+                a přijde na řadu pošťák, který se podívá na adresu, na kterou bude dopis doručovat. Následně
+                v ulici vyhledá odpovídající číslo popisné a teprve poté vloží dopis do schránky odpovídající
+                jménu adresáta. Ten si pak dopis otevře a vzkaz si přečte.
+            </p>
+
+            <p>
+                Posílání a přijímání zpráv v počítačových sítích funguje velice podobně. Na rozdíl od běžného dopisu,
+                kde máme všechny doručovací údaje všechny pohoradě, v počítačových sítích můžeme vnímat každou
+                vrstvu jako samostatnou obálku, přičemž čím vyšší vrstva, tím vnořenější obálka. V případě našeho
+                poštovního příkladu by to znamenalo, že obálka se státem a městem bude obsahovat obálky s ulicí
+                a jménem.
+            </p>
+
+            <h2>L1: Fyzická vrstva</h2>
+
+            <p>
+                Fyzická vrstva je první vrstvou, která nám definuje samotné propojení. Specifikuje, jak mají vypadat
+                síťové kabely, které piny (kontakty) mají jakou funkcionalitu a které hodnoty napětí mají jaký význam.
+            </p>
+
+            <p>
+                U každé vrstvy máme tzv. <span class="term">datovou jednotku</span> (anglicky data unit), tedy nejmenší
+                jednotku, ve které můžeme měřit komunikaci/zprávy. Na úrovni fyzické vrstvy jde o bit.
+            </p>
+
+            <div class="notice">
+                <p>Bitům (a bajtům) jsme se věnovali <a href="bits-and-bytes.html">v jiném textu</a>.</p>
+            </div>
+
+            <p>
+                V případě našeho poštovního příkladu by fyzická vrstva odpovídala poštovní schránce, do které
+                dopis hážeme, nebo třeba i silnici, po které se pošťáci pohybují.
+            </p>
+
+            <h2>L2: Vrstva datového spoje</h2>
+
+            <p>
+                Druhou vrstvou je vrstva datového spoje. Ta už definuje komunikaci mezi dvěma a více spojenými
+                stranami, kontroluje, jak dlouho může která strana vysílat a kdy, poskytuje i jistou opravu chyb.
+                Na vrstvě datového spoje už existuje i adresace, každá strana má svou jedinečnou adresu,
+                tzv. <span class="term">MAC</span> (Media Access Control) <span class="term">adresu</span>.
+            </p>
+
+            <p>
+                Důležitým zařízením na L2 je <span class="term">přepínač</span> (anglicky switch), který má více
+                <span class="term">rozhraní</span> (anglicky interface), což je společný termín pro konektory a vysílače
+                (např. pro Wi-Fi), takže je schopen propojit hned několik zařízení najednou.
+            </p>
+
+            <p>
+                Každé zařízení v síti si udržuje tabulku, ve které si pamatuje všechny MAC adresy v síti a také to,
+                za kterým rozhraním se daná adresa nachází (tj. kterým rozhraním musí zprávu do dané sítě odeslat).
+                Pokud nějaké zařízení dostane zprávu, která není pro něj, ale v tabulce najde záznam pro adresáta,
+                přepošle zprávu odpovídajícím rozhraním. Součástí funkcionality druhé vrstvy je samozřejmě i
+                aktualizace těchto tabulek.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Čtyři zařízení spojená přepínačem (uprostřed) se čtyřmi rozhraními (if/1-4) a
+                        tabulka přepínače obsahující dvojici rozhraní – MAC adresa
+                    </figcaption>
+                    <img src="networks/l2.svg" alt="" />
+                </figure>
+
+                <p>
+                    V případě obrázku výše, pokud by chtěl první počítač (PC 1) poslat zprávu třetímu počítači (PC 3),
+                    vytvoří rámec, jehož datová část bude obsahovat danou zprávu a do jeho hlavičky vloží svou MAC
+                    adresu (24:33:ed:ba:05:de) jako adresu odesílatele a jako adresáta nastaví MAC adresu třetího
+                    počítače (31:15:0d:bf:51:42). Následně rámec odešle jediným spojením, které má, a ten dorazí
+                    k přepínači. Přepínač se podívá na adresáta a do své tabulky a zjistí, že adresa adresáta se
+                    nachází za rozhraním if/3. Zprávu tedy odešle přes toto rozhraní, třetí počítač se podívá na rámec,
+                    který přijme a zjistí, že adresátem je jeho MAC adresa.
+                </p>
+            </div>
+
+            <p>
+                Datovou jednotkou druhé vrstvy je tzv. <span class="term">rámec</span> (anglicky frame). Oproti L1 už nejde
+                o jednotlivé bity, ale o sekvenci bitů s pevně danou strukturou. Rámec můžeme rozdělit na dvě hlavní
+                části, první říkáme hlavička, která obsahuje informace nutné pro doručení v síti – především MAC
+                adresy odesílatele a adresáta. V druhé části jsou samotná data, která v daném rámci posíláme.
+            </p>
+
+            <h2>L3: Síťová vrstva</h2>
+
+            <p>
+                Třetí vrstvou je síťová vrstva. Ta zajišťuje komunikaci mezi jednotlivými L2 spojeními (sítěmi).
+                Máme-li přepínač, ke kterému je připojeno několik zařízení, můžeme mluvit o síti. Představme si,
+                že máme druhý přepínač, do kterého je opět připojeno několik zařízení. Kdybychom chtěli tyto dvě
+                sítě propojit tak, aby spolu všechna zařízení mohla komunikovat, museli bychom přepínače propojit.
+                Tím bychom ale přestali mít dvě sítě, ale získali bychom jednu, přičemž oba dva přepínače by si
+                udržovaly tabulku pro všechna zařízení. V případě množství zařízení v dnešních sítích by výsledné
+                tabulky byly obrovské a hledání v nich velmi pomalé. Také by se při jakékoliv změně v jedné podsíti
+                musely změnit tabulky i v druhé podsíti. 
+            </p>
+
+            <p> 
+                Síťová vrstva oba problémy řeší přidáním nového zařízení do sítě. To nazýváme
+                <span class="term">směrovač</span> (anglicky router) a přepínače v síti propojujeme přes něj.
+                Na rozdíl od přepínače, směrovač nepracuje s MAC adresami, ale místo nich zavádí
+                <span class="term">IP</span> (Internet Protocol) <span class="term">adresy</span>. Aktuálně se
+                v internetu setkáme se dvěma verzemi IP protokolu, IPv4 a IPv6. Tyto dva protokoly se od sebe
+                v mnohém liší, vč. podoby samotných IP adres, nicméně principy zůstávají stejné. Základy si
+                vysvětlíme na starších IPv4 adresách, které jsou přeci jen o trochu přístupnější.
+            </p>
+
+            <p>
+                IPv4 adresa je 32bitové číslo, přičemž jej zapisujeme po čtyřech osmibitových hodnotách (0-255) oddělených
+                tečkou, např. 192.168.10.1 nebo 172.16.0.33. Stejně jako u MAC adres, IP adresa musí být v síti unikátní.
+            </p>
+
+            <div class="notice">
+                <p>
+                    IPv6 adresy jsou v porovnání s IPv4 adresami čtyřikrát větší, místo 32 bitů jsou 128bitové,
+                    a v notaci nepoužívají desítkovou číselnou soustavu, ale šestnáctkovou. Příkladem IPv6 addresy
+                    jsou třeba fe80:ab:2001:ffff:fffe:12:7:1 nebo cafe:80:1234:abba::1.
+                </p>
+            </div>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Dvě L2 sítě spojené routerem. Všimni si, že router má dvě IP adresy,
+                        každou pro jednu síť
+                    </figcaption>
+                    <img src="networks/l3.svg" alt="" />
+                </figure>
+            </div>
+
+            <div class="notice">
+                <p>
+                    Zkusit zjistit IP adresu zařízení, na kterém si právě čteš tuto kapitolu.
+                </p>
+            </div>
+
+            <p>
+                Oproti MAC adresám a přepínačům si na třetí vrstvě směrovač nepamatuje všechny adresy v síti. Takový
+                přístup by nám ostatně moc výhod oproti MAC adresám nepřinesl. Místo toho si směrovač pamatuje pouze
+                adresy sítí a při přeposílání zpráv se orientuje podle nich. Směrovač tedy potřebuje mechanismus, pomocí
+                kterého určí, do jaké sítě adresa patří.
+            </p>
+
+            <p>
+                K tomuto účelu slouží <span class="term">maska sítě</span> (anglicky netmask), což je číslo, které nám udává,
+                kolik prvních bitů IP adresy identifikuje síť. Zbytek bitů pak identifikuje zařízení v síti. Masku typicky
+                zapisujeme lomítkem za konkrétní IP adresou.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        IP adresa 172.15.28.1 s maskou 16. Adresu si přepíšeme binárně a prvních 16 bitů (zeleně)
+                        bude adresa sítě (tj. 172.15.0.0). Zbývajících 16 bitů (červeně) identifikuje zařízení v rámci sítě.
+                    </figcaption>
+                    <img src="networks/netmask.svg" alt="Vizualizace aplikace masky na IP adresu" />
+                </figure>
+
+                <div class="notice">
+                    <p>
+                        Pro správné pochopení toho, jak masky fungují, je nezbytná alespoň základní znalost dvojkové
+                        soustavy. Pokud jsi ještě nečetl <a href="numeral-systems.html">příslušnou kapitolu</a>,
+                        možná je vhodný čas do ní nakouknout.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                Adresy se stejnými maskami, které mají identickou adresu sítě patří do stejné sítě. V případě, že se shodují
+                i části adresy identifikující zařízení, jedná se o stejné zařízení. Naopak pokud se liší adresy sítě, pak
+                na druhé části nezáleží.
+            </p>
+
+            <div class="warn">
+                <p>
+                    Místo o adrese sítě občas mluvíme o <span class="term">prefixu</span> (tj. předponě), protože adresa
+                    sítě je takovou neměnnou předponou, kterou sdílí všechna zařízení v dané síti.
+                </p>
+            </div>
+
+            <div class="example">
+                <details>
+                    <summary>
+                        <p>
+                            Zkus pro následující adresy určit část určující síť a část identifikující zařízení. Po kliknutí se
+                            ti zobrazí výsledky.
+                        </p>
+
+                        <div class="double">
+                            <div>
+                                <ul>
+                                    <li>192.168.10.1/24</li>
+                                    <li>192.168.10.1/16</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>172.16.0.33/24</li>
+                                    <li>172.16.0.33/28</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </summary>
+                    <div class="wrapper">
+                        <table>
+                            <thead>
+                                <tr><th>Adresa</th><th>Maska</th><th>Síť</th><th>Zařízení</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>192.168.10.1</td><td>24</td><td>192.168.10.0</td><td>0.0.0.1</td></tr>
+                                <tr><td>192.168.10.1</td><td>16</td><td>192.168.0.0</td><td>0.0.10.1</td></tr>
+                                <tr><td>172.16.0.33</td><td>24</td><td>172.16.0.0</td><td>0.0.0.33</td></tr>
+                                <tr><td>172.16.0.33</td><td>28</td><td>172.16.0.32</td><td>0.0.0.1</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="warn">
+                        <p>
+                            Poslední příklad v tabulce může být na první pohled matoucí. Důležité je uvědomit si,
+                            že maska nám určuje, kolik prvních bitů patří do identifikátoru sítě. V tomto
+                            případě je maska 28, tj. do adresy sítě patří i první 4 bity z posledního segmentu, který
+                            má hodnotu 33, respektive 00010001 binárně. Když vezmeme první 4 bity a zbytek doplníme
+                            nulami, dostaneme hodnotu 32, kterou vidíš v tabulce. Následně vezmeme část identifikující
+                            zařízení, poslední 4 bity, a doplníme ji patřičným počtem nul a dostaneme 0.0.0.1
+                            z posledního sloupce v tabulce. 
+                        </p>
+                    </div>
+                </details>
+            </div>
+
+            <p>
+                V případě našich dvou L2 sítí, každá z nich dostane svou adresu sítě a zařízení v rámci sítě dostanou
+                odpovídající IP adresy. Komunikace v rámci sítě probíhá obdobně jako předtím, akorát teď už můžeme
+                kontaktovat zařízení v druhé síti. Stačí nám znát IP adresu takového zařízení. Pokud takovou adresu máme,
+                stačí nám vyslat <span class="term">paket</span>, jak nazýváme datovou jednotkou síťové vrstvy, který
+                bude obsahovat adresy adresáta a odesílatele, stejně jako předtím rámec s tím rozdílem, že nyní mluvíme
+                o IP adresách.
+            </p>
+
+            <p>
+                Když posíláme paket do jiné sítě, musí jeho cesta nutně vést přes nějaký směrovač. Potřebujeme proto
+                předat paket směrovači v naší síti, aby jej přeposlal do jiné sítě, ale máme jen jednu cílovou adresu
+                a ta odpovídá konečnému příjemci. Takže jak paket předáme konkrétnímu směrovači? Tady hezky vynikne
+                rozdílná funkcionalita druhé a třetí vrstvy: paket pošleme směrovači tak, že jej zabalíme do L2 rámce,
+                který bude mít naši MAC adresu jako adresu odesílatele a MAC adresu směrovače jako adresu příjemce. Rámec
+                dorazí ke směrovači, ten si jej rozbalí a dostane náš L3 paket s cílovou adresou v jiné síti. Tak směrovač
+                pozná, že paket není určen pro něj, podívá se do své tabulky, do které sítě paket míří, zabalí paket do
+                nového L2 rámce a rámec odešle.
+            </p>
+
+            <p>
+                V síti se běžně objevují pakety, které míří do jiné sítě, kterou směrovač nemá v tabulce. V případě, že si
+                s paketem nevíme rady, zahodíme ho. Výjimkou je situace, kdy máme nastavenou tzv.
+                <span class="term">výchozí bránu</span> (anglicky default gateway), což je typicky směrovač, který se
+                použije, pokud není jiná cesta známa. Díky tomu nemusí mít směrovače ve své směrovací tabulce všechny
+                sítě, ale jen ty, které používají jinou cestu než je použita pro výchozí bránu. Nevýhodou tohoto řešení je
+                zvýšený provoz v síti, protože pakety do neexistujících sítí jsou zahozeny později.
+            </p>
+
+            <div class="notice">
+                Výchozí brána se velmi často používá v koncových sítích, například doma nebo ve škole, kde skoro všechen
+                provoz míří <q>ven</q> – přes připojení poskytovatele internetu (operátora). Naopak ve velkých sítích jsme
+                s výchozími bránami zpravidla opatrnější. 
+            </div>
+
+            <div class="notice">
+                <p>
+                    To, zda adresát patří do jiné sítě zjistíme právě díky adrese sítě a masce. V případě, že se adresa
+                    sítě shoduje s adresou sítě adresáta (použijeme stejnou masku sítě, abychom získali adresu sítě), pak
+                    patří do stejné sítě. V opačném případě nikoliv.
+                </p>
+                <div class="example">
+                    <p>
+                        Adresa 192.168.10.32 patří do sítě 192.168.10.0/24, kdežto adresa 192.168.14.32 do ní nepatří.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                Podstatnou změnou oproti předchozí vrstvě je, že si směrovač v tabulce pamatuje jen sítě s jejich maskami,
+                ne všechna zařízení v rámci sítě. To má za následek to, že směrovač může do sítě přeposlat i paket, jehož
+                adresa adresáta do sítě patří, ale žádné zařízení ji nemá přidělenou. V takovém případě se paket v síti
+                zahodí.
+            </p>
+
+            <p>
+                Důležitým termínem, kterým třetí vrstvu opustíme, je <span class="term">hop-by-hop</span>, což je označení pro
+                způsob směrování paketu mezi sítěmi, které jsme si ukázali výše. Řekli jsme si, že pokud paket směřuje
+                do jiné sítě, směrovač se podívá do své tabulky a pošle ho nejvhodnějším směrem. Jinak řečeno, jednotlivé
+                směrovače nevolí (neurčují) paketu celou trasu k cíli, ale pouze ho k cíli o kousek přiblíží. Tomuto
+                přiblížení (výměně paketu mezi dvěma směrovači) se odborně říká skok (hop), směrování tedy probíhá
+                skok-po-skoku (hop-by-hop).
+            </p>
+
+            <h2>L4: Transportní vrstva</h2>
+
+            <p>
+                Doposud jsme se bavili o posílání nanejvýše jednotlivých zpráv, s těmi si ale v sítích nevystačíme.
+                Vem si takový videohovor, kde posíláme v rychlém sledu po sobě spoustu dat s obrazem a zvukem. Kdybychom
+                se na tato data dívali jako na nezávislé zprávy, měli bychom problém z dat u příjemce zrekonstruovat
+                původní obraz a zvuk. Třeba i proto, že bychom nebyli schopni určit pořadí jednotlivých paketů. A přesně
+                toto je jeden z problémů, které v sítích řeší transportní vrstva.
+            </p>
+
+            <p>
+                Na rozdíl od dvou předchozích vrstev, L4 už nepřidává žádné další adresy, ale místo toho zavádí tzv.
+                <span class="term">port</span>. Port je 16bitové číslo (hodnoty 0-65535), které identifikuje protokol/službu
+                na straně odesílatele a adresáta. Takových služeb může na jednom zařízení běžet spousta (např. webový
+                server, e-mailový server, souborový server etc.) a porty jsou způsob jak rozlišit, pro koho je ta která
+                zpráva určená. Port často zapisujeme za dvojtečkou za IP adresu, např. 192.168.10.32:8080 určuje službu
+                běžící na portu 8080 na zařízení s adresou 192.168.10.32.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Vrátíme-li se k naší poštovní analogii, úkolem prvních tří vrstev bylo doručit dopis do správného domu.
+                    Port můžeme chápat jako identifikátor schránky, do které dopis patří.
+                </p>
+            </div>
+
+            <p>
+                Na transportní vrstvě máme dva hlavní protokoly, TCP a UDP. Datovou jednotkou transportní vrsty je
+                <span class="term">segment</span> v případě prvního protokolu a <span class="term">datagram</span> v případě druhého.
+            </p>
+
+            <p>
+                <span class="term">TCP</span> (Transmission Control Protocol) je protokol, který ke stávajícímu paketu L3 vrstvy
+                přidá již zmíněný port a číslo paketu (abychom věděli, jak na sebe zprávy navazují). TCP zároveň vyžaduje,
+                aby bylo doručování zpráv potvrzováno. Tím se totiž zajistí, že všechny zprávy v pořádku došly, a v případě,
+                že se nějaká cestou ztratí, protokol ji umí poslat znovu. To ovšem znamená, že spojení bude sice spolehlivé,
+                ale relativně pomalé. S TCP se setkáváme dnes a denně, například i tento web si prohlížíš přes TCP spojení.
+            </p>
+
+            <p>
+                <span class="term">UDP</span> (User Datagram Protocol) je protokol, který si za cíl klade především rychlost. Stejně
+                jako TCP přidává port a číslování paketů, ale na rozdíl od TCP se nezdržuje potvrzováním. Díky tomu je přenos
+                rychlý a s malým zpožděním, proto se tento protokol používá například u zmíněných videohovorů, kde tolik nevadí,
+                že se občas nějaká zpráva ztratí (může se to projevit artefaktem – chybou v obrazu či zvuku), důležité je, že si
+                spolu můžeme povídat bez významného zpoždění.
+            </p>
+
+            <h2>L5-L7: Aplikační vrstva</h2>
+
+            <p>
+                U posledních tří vrstev, které jsou nejblíže uživateli, se zdržíme jen krátce tak, abychom popsali některé
+                aspekty a funkcionality, které nabízí. Kromě toho, že na těchto vrstvách žijí všechny důležité protokoly, se
+                kterými se jako uživatelé setkáváme (především HTTP(s) pro web nebo SMTP pro e-mail), tyto vyšší vrstvy
+                zajišťují správnou komunikaci mezi jednotlivými aplikacemi (např. komunikace přes Messenger) a nebo třeba
+                šifrování.
+            </p>
+
+            <p>
+                Pokud v naší poštovní analogii byla transportní vrstva poštovní schránkou v domě, pak na úrovni páté až sedmé
+                vrstvy si můžeme představit předávání dopisu v rámci jedné domácnosti.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Jedním z užitečných protokolů těchto vrstev je DNS (Domain Name System). Dosud jsme si hodně povídali o IP
+                    adresách, ale když chceš navštívit nějakou stránku na internetu, asi do vyhledávače nepíšeš IP adresu serveru,
+                    na kterém stránky běží. To je ostatně dobře, pamatovat si všechny adresy by bylo poměrně nepraktické. Počítač
+                    nebo telefon ale IP adresu přece jen potřebují, jinak by nevěděli, komu zprávu poslat.
+                </p>
+                <p>
+                    Důvod, proč nám stačí napsat jen jmémo serveru (např. google.com nebo kapitolyinformatiky.cz), je právě DNS,
+                    který se stará o překlad mezi IP adresami a jmény. Tento překlad si vyzkoušíme ve cvičeních k této kapitole.
+                </p>
+            </div>
+
+            <h2>Posíláme dopis, digitálně!</h2>
+
+            <p>
+                Teď, když jsme si prošli jednotlivé vrstvy, se ještě jednou podívejme na celou cestu zprávy sítí. Zprávu
+                většinou posíláme z nějaké aplikace, kde nejprve napíšeme zprávu samotnou a následně ji odešleme.
+            </p>
+
+            <p>
+                Zjednodušeně, proces odeslání probíhá tak, že aplikace vezme naše data (text zprávy) a přidá jednotlivé hlavičky
+                prvních tří síťových vrstev (k datům přidá hlavičky L7, pak L6 hlavičku a nakonec L5), tato data předá operačnímu
+                systému našeho počítače, který přidá nejprve L4 hlavičku, pak L3 hlavičku a předá tato data síťové kartě, která
+                doplní poslední dvě vrstvy a zprávu odešle.
+            </p>
+
+            <p>
+                Zpráva nejprve putuje v naší lokální síti, dorazí tedy k přepínači, který se podívá, kterému zařízení (MAC adrese)
+                je zprávy určena (podívá se tedy na obsah L2 hlavičky) a přepošle ji nejbližšímu směrovači. Směrovač se podívá
+                na zprávu a přečte si L3 hlavičku s IP adresou adresáta, podívá se do své směrovací tabulky, kterým směrem (přes
+                jaké rozhraní) má zprávu odeslat a odešle ji. Zpráva takto proskáče (hop-by-hop) celou sítí, až dorazí do
+                té cílové, kde směrovač pošle zprávu nejprve přepínači, který ji pak pošle (dle L2 adresy, na kterou se podívá
+                v odpovídající hlavičce) správnému počítači.
+            </p>
+
+            <p>
+                Do počítače zpráva dorazí přes síťovou kartu, který zprávu rozbalí, zbaví prvních dvou hlaviček a předá ji operačnímu
+                systému. Ten zprávu zbaví L3 a L4 hlaviček, přičemž cílový port použije k určení aplikace, které má předat zbytek dat
+                (L5 až L7 hlavičky a data – samotný text zprávy). Aplikace dostane, co zbylo ze zprávy, rozbalí si poslední tři hlavičky
+                (takže například zprávu dešifruje) a uživateli na druhé straně zobrazí námi odeslaný text zprávy.
+            </p>
+
+            <div class="example">
+                <figure>
+                    <figcaption>
+                        Cesta paketu sítí mezi dvěma komunikujícími aplikacemi. Síťové prvky po cestě nahlíží jen
+                        do těch vrstev, které potřebují ke správnému fungování. Jmenovitě přepínač se řídí
+                        informacemi v L2 hlavičce, směrovače se řídí L3 hlavičkou (cílová IP adresa) a upravují
+                        L2 hlavičku (MAC adresy)
+                    </figcaption>
+                    <img src="networks/net.svg" alt="" />
+                </figure>
+            </div>
+
+            <div class="summary">
+                <h3>Shrnutí</h3>
+                <p>
+                    Řekli jsme si, že internet je globální počítačová síť, tj. množství vzájemně propojených počítačů. Ukázali
+                    jsme si také dva modely, skrze které se na sítě díváme: první byl ISO/OSI model rozlišující sedm vrstev, druhý
+                    TCP/IP rozlišující pouze 4. Následně jsme se s vrstvami seznámili.
+                </p>
+
+                <p>Důležité pojmy, které bys neměl zapomenout:</p>
+                <ul>
+                    <li>ping/latence</li>
+                    <li>přepínač (switch) a MAC adresa</li>
+                    <li>směrovač (router) a IP adresa</li>
+                    <li>TCP a UDP</li>
+                </ul>
+            </div>
+
+            <div class="quickcheck">
+                <p>Na konci této kapitoly bys měl být schopen:</p>
+
+                <ul>
+                    <li>intuitivně popsat komunikaci v internetu</li>
+                    <li>rozlišit IPv4, IPv6 a MAC adresy</li>
+                    <li>vysvětlit, v čem se liší úloha přepínače (switche) a směrovače (routeru)</li>
+                    <li>popsat, co mají TCP a UDP společné a čím se liší </li>
+                </ul>
+            </div>
+
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>

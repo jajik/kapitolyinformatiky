@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií.">
+    <meta name="author" content="Vladimír Chlup">
+
+    <title>Bity a bajty | Kapitoly informatiky</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://kapitolyinformatiky.cz/chapters/bits-and-bytes.html" >
+
+    <link rel="manifest" href="../manifest.json" >
+    <link rel="icon" href="../favicon.ico" >
+    <link rel="icon" type="image/png" href="../images/icon16.png" sizes="16x16" >
+    <link rel="icon" type="image/png" href="../images/icon32.png" sizes="32x32" >
+    <link rel="icon" type="image/png" href="../images/icon192.png" sizes="192x192" >
+    <link rel="shortcut icon" type="image/png" href="../images/icon512.png" sizes="512x512" >
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon.png" >
+
+    <meta property="og:image" name="twitter:image" content="https://kapitolyinformatiky.cz/images/icon512.png" >
+    <meta property="og:description" name="twitter:description" content="Kapitoly informatiky jsou web zaměřený na učivo informatiky pro studenty středních škol a gymnázií." >
+    <meta property="og:title" name="twitter:title" content="Kapitoly informatiky" >
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img id="logo" src="../images/logo.svg" alt=""></a>
+    </header>
+
+    <label for="mytoggle"></label>
+    <input type="checkbox" id="mytoggle">
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="../about.html">O webu</a></li>
+                <li><a href="index.html">Kapitoly</a></li>
+                <li><a href="../exercises/index.html">Procvičování</a></li>
+                <li><a href="../teachers/index.html">Pro učitele</a></li>
+                <li><a href="../term-index.html">Rejstřík</a></li>
+                <li><a href="../external-materials.html">Další materiály</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="content">
+        <article>
+
+            <h1>Bity a bajty</h1>
+
+            <p>
+                Jednou z důležitých součástí počítače je paměť, ve které si můžeme ukládat
+                naše data – písničky, filmy, dokumenty, fotky, zkrátka data, která chceme
+                uchovat do budoucna.
+            </p>
+            <p>
+                Základní jednotkou paměti je <span class="term">bit</span> (z anglického bit – kousek,
+                troška), který rozlišuje pouze dva stavy: jedničku a nulu (nebo třeba zapnuto/vypnuto
+                jako u vypínače, přítomnost/nepřítomnost u žáka ve třídě, atp.). Zkrátka se
+                jedná o tu nejmenší jednotku informace.
+            </p>
+            <p>
+                Od bitu se odvíjí jednotka <span class="term">bajt</span> (z anglického byte). Bajt se
+                skládá z osmi bitů a tedy rozlišuje 2<sup>8</sup> (256) stavů.
+            </p>
+            <p>
+                Obě jednotky existují vedle sebe, každou totiž používáme v jiných oblastech.
+                Například bity používáme, bavíme-li se o sítích, tedy například o rychlostech
+                internetového připojení. Naproti tomu bajty se používají v kontextu disků a
+                jiných paměťových úložišť – např. kapacita úložiště v telefonu.
+            </p>
+
+            <h2>Předpony: kilo, mega, giga a další</h2>
+
+            <p>
+                Ve skutečnosti se s jednotlivými bity a bajty setkáme zřídkakdy, protože běžně pracujeme
+                s datovými objemy mnohem většími. Stejně jako v matematice a dalších předmětech používáme
+                i u bitů a bajtů předpony Mezinárodní soustavy jednotek (SI). Ty nejfrekventovanější najdeš
+                v tabulce níže.
+            </p>
+
+            <table>
+                <thead>
+                    <tr><th>Předpona</th><th>Značka</th><th>Hodnota</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>kilo</td><td>k</td><td class="left">1 000 (10<sup>3)</sup></td></tr>
+                <tr><td>mega</td><td>M</td><td class="left">1 000 000 (10<sup>6</sup>)</td></tr>
+                <tr><td>giga</td><td>G</td><td class="left">1 000 000 000 (10<sup>9</sup>)</td></tr>
+                <tr><td>tera</td><td>T</td><td class="left">1 000 000 000 000 (10<sup>12</sup>)</td></tr>
+                </tbody>
+            </table>
+
+            <p>
+                Tisíc bajtů je jeden kilobajt (psáno 1 kB), tisíc bitů (tj. osmina) je jeden kilobit (1 kb).
+                Dnešní zařízení (telefony, počítače) mají běžné úložiště o stovkách gigabajtů (GB) až o jednotkách
+                terabajtů (TB) – tedy těžko představitelné trilióny bajtů.
+            </p>
+
+            <div class="example">
+                <details>
+                    <summary>Za jak dlouho zkopírujeme 40 MB soubor při 20 kB/s? (Výsledek se ti ukáže po kliknutí.)</summary>
+
+                    <p>
+                        Stačí nám vydělit velikost souboru (v kB) rychlostí přenosu:
+                        <math><mfrac><mn>40 000</mn><mn>20</mn></mfrac><mo>=</mo><mn>2000</mn></math>
+                    </p>                        
+                    <p>
+                        Soubor zkopírujeme za 2000 sekund.
+                    </p>
+                </details>
+            </div>
+
+            <p>
+                Kdybys měl náhodou pocit, že je vše až podezřele jasné, hned to napravíme. Bity jsou z definice
+                binární – rozlišují pouze dvě hodnoty. Skládáním více bitů k sobě násobíme počet postihnutelných
+                hodnot dvěma. Bajt je, jak jsme si řekli, osm bitů, tj. rozlišuje 256 hodnot. Devět bitů nám dá
+                512 (2<sup>9</sup>) možností a 10 bitů celých 1024 (2<sup>10</sup>) možností a tak dále. Vždy ve výsledku dostaneme mocninu dvojky.
+            </p>
+            <p>
+                V případě předpon SI, které jsme si uvedli nahoře, ale mocninu dvojky vždycky nedostaneme. Vezmi si
+                takový kB, tedy 1000 bajtů, tedy 8000 bitů. Ani jedno z těchto čísel neumíme vyjádřit mocninou
+                dvojky – nejblíže je 1024 (2<sup>10</sup>), tedy 8192 (2<sup>13</sup>) bitů. To se ukázalo jako
+                poměrně nepraktické vzhledem k tomu, že architektura dnešních počítačů je de facto binární, a proto
+                byly standardizovány další předpony, které vychází z dvojkové báze.
+            </p>
+
+            <table>
+                <thead>
+                    <tr><th>Předpona</th><th>Značka</th><th>Hodnota</th></tr>
+                </thead>
+                <tbody>
+                <tr><td>kibi</td><td>Ki</td><td class="left">1024</td></tr>
+                <tr><td>mebi</td><td>Mi</td><td class="left">1 048 576 (1024<sup>2</sup>)</td></tr>
+                <tr><td>gibi</td><td>Gi</td><td class="left">1 073 741 824 (1024<sup>3</sup>)</td></tr>
+                <tr><td>tebi</td><td>Ti</td><td class="left">1 099 511 627 776 (1024<sup>4</sup>)</td></tr>
+                </tbody>
+            </table>
+
+            <p>
+                Jeden kibibajt (1 KiB) je 1024 bajtů, respektive 8192 bitů. S těmito dvojkovými předponami se
+                můžeme občas setkat, nicméně v praxi se častěji setkáš s tím, že se použijí klasické SI předpony,
+                jen se jimi občas myslí ony dvojkové. Takovým typickým příkladem jsou operační paměti, kdy si
+                v obchodě můžeš vybírat z různých kapacit v gigabajtech, ale ve skutečnosti jde o gibibajty. Běžný
+                spotřebitel rozdíl nepozná a ti ostatní vědí, co se tím myslí.
+            </p>
+
+            <div class="notice">
+                <p>
+                    Možná si říkáš, proč se vůbec zabývat takovými odchylkami. Zkusím to vysvětlit na jednoduchém
+                    příkladu práce počítače s pamětí. Procesor, tj. mozek počítače, může načítat a ukládat data do paměti.
+                </p>
+                <p>
+                    Aby byl schopen načíst a uložit data ze správného místa paměti, používá tzv.
+                    <span class="term">adresaci</span> – každé buňce (bloku buněk) přiřadí jednoznačnou hodnotu – adresu.
+                    Procesor má pak vlastní paměť, jejíž hodnota odpovídá adrese paměti, se kterou pracuje.
+                </p>
+                <p>
+                    Řekněme si, že tato adresu určující paměť je složena z deseti bitů, takže může nabývat
+                    2<sup>10</sup> = 1024 hodnot. Kdybychom adresovali každý bajt, tak bychom mohli připojit paměť
+                    s kapacitou 1024 bajtů. V případě, že bychom připojili paměť o 1 kB, tedy 1000 B, tak by nám
+                    zůstalo 24 adres nevyužitých, což by bylo zbytečné plýtvání. Zvlášť v situaci, kdy dnes máme
+                    běžně k dispozici alespoň vyšší jednotky až nižší desítky gigabajtů.
+                </p>
+            </div>
+
+            <div class="summary">
+                <h3>Shrnutí</h3>
+                <ul>
+                    <li>základní jednotkou informace je bit, který značíme malým b a rozlišuje pouze dvě hodnoty: 0, 1</li>
+                    <li>druhou jednotkou je bajt, který značíme velkým B a který odpovídá 8 bitům</li>
+                    <li>pro bity a bajty používáme předpony SI – kb, kB, Mb, MB, Gb, GB, etc.</li>
+                    <li>předpony SI jsou definovány mocninami desítky, bity a bajty jsou povahou dvojkové, proto byly
+                        zavedeny dvojkové předpony: Mi (mebi), Gi (gibi) a další
+                    </li>
+                </ul>
+            </div>
+
+            <div class="quickcheck">
+                <p>
+                    Na konci této kapitoly bys měl být schopen:
+                </p>
+
+                <ul>
+                    <li>najít si a spočítat, kolik bajtů paměti je ve tvém telefonu</li>
+                    <li>dokázat spočítat, jak dlouho bude trvat zkopírování 20 MB souboru rychlostí 40 kB/s</li>
+                    <li>říct, o kolik bitů je 7 KiB větších než 6 KB</li>
+                </ul>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="triple">
+            <p>Aktualizace: 20. 5. 2024</p>
+            <p>Licence CC BY-NC-SA</p>
+            <p>kapitolyinformatiky@chlup.net</p>
+        </div>
+    </footer>
+</body>
+
+</html>
