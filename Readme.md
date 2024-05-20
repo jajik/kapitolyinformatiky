@@ -7,7 +7,7 @@ Tento repozitář obsahuje veškeré zdrojové kódy webu [kapitolyinformatiky.c
 ## Struktura
 
 Struktura webu je rozdělena do tří částí: kapitoly (učební texty) v adresáři `chapters`, úlohy k procvičování
-v adresáři `excercises` a materiály pro účitele v `teachers`.
+v adresáři `exercises` a materiály pro účitele v `teachers`.
 
 V kořenovém adresáři jsou dále obecné stránky, např. domovská stránka nebo krátké povídání o webu. Adresář
 `icons` obsahuje ikony používané napříč webem. Obrázky relevantní pro konkrétní kapitoly jsou umístěny
