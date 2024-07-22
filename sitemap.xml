@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://kapitolyinformatiky.cz/</loc>
+  <lastmod>2024-05-06</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/index.html</loc>
+  <lastmod>2024-05-06</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/about.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/index.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/exercises/index.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/index.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/term-index.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/external-materials.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/numeral-systems.html</loc>
+  <lastmod>2024-07-02</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/bits-and-bytes.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/coding-and-crypto.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/graphs.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/algorithms.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/chapters/networks.html</loc>
+  <lastmod>2024-05-25</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<url>
+  <loc>https://kapitolyinformatiky.cz/exercises/numeral-systems.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/exercises/bits-and-bytes.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/exercises/graphs.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/exercises/networks.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/bits-and-bytes.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/numeral-systems.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/coding-and-crypto.html</loc>
+  <lastmod>2024-06-21</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/graphs.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/algorithms.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://kapitolyinformatiky.cz/teachers/networks.html</loc>
+  <lastmod>2024-05-20</lastmod>
+  <priority>0.64</priority>
+</url>
+
+</urlset>
+
